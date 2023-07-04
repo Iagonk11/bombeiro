@@ -8,6 +8,11 @@
     <title>Dados Pessoais</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="dados.css">
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 
 <body>
@@ -26,7 +31,24 @@
         <div class="idade">
             Idade: <input type="text" id="idade" >
         </div>
+        <div class="identidade">
+            RG/CPF Paciente: <input type="text" id="identidade">
+        </div>
+        
+        <div class="telefone">
+            <form id="telefone" onsubmit="process(event)">
+              Telefone:
+              <input id="phone" type="tel" name="phone" />
+            </form>
+           </div>
+        
     </div>
 </body>
-
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
 </html>
