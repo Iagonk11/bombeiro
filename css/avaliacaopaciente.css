@@ -87,8 +87,15 @@ h2 {
     transform: scale(1.03);
 }
 
-.texto1{
+.texto1 {
     position: absolute;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.escreve {
+    position: absolute;
+    margin-top: -5.5px;
     margin-left: 25px;
 }
 
@@ -106,7 +113,7 @@ h2 {
     left: 10;
     height: 21.5px;
     width: 21.5px;
-    background-color: #eee;
+    background-color: #eeeeeed8;
     cursor: pointer;
 }
 
@@ -142,4 +149,17 @@ h2 {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+input[type="text"] {
+    padding: 0.6rem;
+    width: 60%;
+    height: 2px;
+    border: 2px solid #1f0025;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: all .3s;
+    font-family: 'Poppins', sans-serif;
+    margin: 2%
 }
