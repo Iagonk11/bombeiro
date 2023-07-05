@@ -3,21 +3,59 @@
 body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
     
+}
+
+.abacima{
+    background-color: red;
+    width: 100%;
+    text-align: center;
 }
 
 .abas{
     margin: 3%;
-    border: 1px solid rgb(147, 147, 147);
-    height: 70px;
+    border: 2px solid red;
     overflow: hidden;
-    background-color: red;
     border-radius: 20px;
     font-size: 24px;
     color: #fff;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     align-content: center;
     flex-direction: column;
+    width: 70%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.abasmen{
+    margin: 3%;
+    border: 2px solid red;
+    overflow: hidden;
+    border-radius: 20px;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 35%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+iframe{
+    display: none;
+}
+
+.fa-solid{
+    transition: .4s;
 }
