@@ -22,7 +22,7 @@ body {
 }
 
 .texto {
-    background-color: red;
+    background-color: rgb(164, 19, 19);
     width: 58.4%;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@ body {
 
 h2 {
     font-size: 30px;
-    background-color: red;
+    background-color: rgb(164, 19, 19);
     color: white;
 }
 
@@ -74,7 +74,7 @@ h2 {
     width: 90px;
     height: 40px;
     color: white;
-    background-color: red;
+    background-color: rgb(164, 19, 19);
     border: none;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
