@@ -7,39 +7,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
-    <link rel="stylesheet" href="css/avaliacaopaciente.css">
+    <link rel="stylesheet" href="css/problemas.css">
 </head>
 
 <body>
 
     <div class="container">
-        <div class="texto">
-            <h2> Problemas Encontrados Suspeitos</h2>
-        </div>
-        <form action="#" method="post" class="form">
+        <form action="php/recebe.php" method="post" class="form">
             <div class="separa">
                 <div class="d1">
-
+                    <label for="opcao1" class="agrupamento">
+                        <input type="checkbox" id="opcao1" name="opcao1" value="Opção 1">
+                        <span class="checkmark"></span>
+                        <div class="texto1">Psiquiátrico</div>
+                    </label>
                 </div>
 
                 <div class="d2">
-
+                    <div class="select">
+                        <label for="opcao2" class="agrupamento">
+                            <input type="checkbox" id="opcao2" name="opcao2" value="Opção 2">
+                            <span class="checkmark1"></span>
+                            <div class="arruma">
+                                <select name="opcao2" id="opcao2">
+                                    <option value="Respiratorio">Respiratório</option>
+                                    <option value="DPOC">DPOC</option>
+                                    <option value="Inalacao Fumaça">Inalação Fumaça</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="d3">
-
+                    <div class="select">
+                        <label for="opcao3" class="agrupamento">
+                            <input type="checkbox" id="opcao3" name="opcao3" value="Opção 3">
+                            <span class="checkmark2"></span>
+                            <div class="arruma2">
+                                <select name="opcao3" id="opcao3">
+                                    <option value="Diabetes">Diabetes</option>
+                                    <option value="Hiperglicemia">Hiperglicemia</option>
+                                    <option value="Hipoglicemia">Hipoglicemia</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="d4">
-
+                    <label for="opcao4" class="agrupamento">
+                        <input type="checkbox" id="opcao4" name="opcao4" value="Opção 4">
+                        <span class="checkmark"></span>
+                        <div class="escreve">
+                            <input type="text" placeholder="Outro">
+                        </div>
+                    </label>
                 </div>
 
                 <div class="d5">
-
+                    <div class="select">
+                        <label for="opcao5" class="agrupamento">
+                            <input type="checkbox" id="opcao5" name="opcao5" value="Opção 5">
+                            <span class="checkmark1"></span>
+                            <div class="arruma">
+                                <select name="opcao5" id="opcao5">
+                                    <option value="Obstétrico">Obstétrico</option>
+                                    <option value="DPOC">DPOC</option>
+                                    <option value="DPOC">DPOC</option>
+                                    <option value="Inalacao Fumaça">Inalação Fumaça</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="d6">
-
+                    <div class="select">
+                        <label for="opcao6" class="agrupamento">
+                            <input type="checkbox" id="opcao6" name="opcao6" value="Opção 6">
+                            <span class="checkmark1"></span>
+                            <div class="arruma">
+                                <select name="opcao6" id="opcao6">
+                                    <option value="Obstétrico">Obstétrico</option>
+                                    <option value="DPOC">DPOC</option>
+                                    <option value="DPOC">DPOC</option>
+                                    <option value="Inalacao Fumaça">Inalação Fumaça</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
                 </div>
             </div>
         </form>
