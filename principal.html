@@ -20,22 +20,12 @@
             <h4>Assoc. de Serviços Sociais Voluntários de Guaramirim</h4>
         </div>
         </div>
-        <div class="esqnav">
-            <div class="linha">Nº USB:&nbsp;&nbsp;<p>1490</p></div>
-            <div class="linha">Nº OCORRÊNCIA:&nbsp;&nbsp;<p>1490</p></div>
-            <div class="linha">DESP.:&nbsp;&nbsp;<p>1490</p></div>
-            <div class="linha">H. CH.:&nbsp;&nbsp;<p>1490</p></div>
-            <div class="linha">KM FINAL:&nbsp;&nbsp;<p>1490</p></div>
-            <div class="linha">CÓD. SIA/SUS:&nbsp;&nbsp;<p>1490</p></div>
-        </div>
         <div class="cennav">
             <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
             <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
             <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
             <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
             <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
-
-            
         </div>
         <div class="dirnav">
             <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
@@ -44,17 +34,48 @@
             <div class="linha">IDADE:&nbsp;&nbsp;<p>90</p></p></div>
             <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
         </div>
+        <div class="dado" onclick="dados();"><i class="fa-solid fa-caret-down"></i></div>
     </div>
-
+    <div class="telapreta" id="dado" onclick="fdado();">
+    <div class="dadosos">
+        <div class="esqnav">
+            <div class="linha">Nº USB:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">Nº OCORRÊNCIA:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">DESP.:&nbsp;&nbsp;<p>1490</p>&nbsp;&nbsp;&nbsp;&nbsp;H. CH.:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">KM FINAL:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">CÓD. SIA/SUS:&nbsp;&nbsp;<p>1490</p></div>
+        </div>
+        <div class="cennav2">
+            <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
+            <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
+            <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
+            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
+        </div>
+        <div class="dirnav2">
+            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Matheus Persh Zenere</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>90</p></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+        </div>
+    </div>
+</div>
 
     <div class="abas" onclick="abrir();" id="aba1">
         <div class="abacima"><h3>Tipo de Ocorrência (Pré Hospitalar)</h3><i class="fa-solid fa-chevron-down" id="seta"></i></div>
         <iframe src="avaliacaopaciente.html" id="iframe1" width="100%" height="100%"></iframe>
     </div>
+    <div class="lado">
     <div class="abasmen" onclick="abrir2();" id="aba2">
         <div class="abacima"><h3>Vítima Era:</h3><i class="fa-solid fa-chevron-down" id="seta2"></i></div>
         <iframe src="vitimaera.html" id="iframe2" width="100%" height="100%"></iframe>
     </div>
+    <div class="abasmen" onclick="abrir2();" id="aba3">
+        <div class="abacima"><h3>Problemas:</h3><i class="fa-solid fa-chevron-down" id="seta3"></i></div>
+        <iframe src="problemas.html" id="iframe3" width="100%" height="100%"></iframe>
+    </div>
+</div>
 </body>
 
 <script>
@@ -63,16 +84,24 @@
     var iframe2 = document.getElementById('iframe2');
     var aba2 = document.getElementById('aba2');
 
-    function abrir(){
-        if(iframe1.style.display == "block" && aba1.style.height == "650px"){
-            iframe1.style.display = "none";
-            aba1.style.height = "auto";
-            document.getElementById('seta').style.transform = 'rotate(360deg)'
+    function dados(){
+        document.getElementById('dado').style.display = 'block'
+    }
 
-        }else{
+    function fdado(){
+        document.getElementById('dado').style.display = 'none'
+    }
+
+    function abrir(){
+        if(iframe1.style.display == "none" && aba1.style.height == "auto"){
             iframe1.style.display = "block";
             aba1.style.height = "650px";
             document.getElementById('seta').style.transform = 'rotate(180deg)'
+
+        }else{
+            iframe1.style.display = "none";
+            aba1.style.height = "auto";
+            document.getElementById('seta').style.transform = 'rotate(360deg)'
         }    
     } 
 
@@ -80,12 +109,17 @@
         if(iframe2.style.display == "block" && aba2.style.height == "650px"){
             iframe2.style.display = "none";
             aba2.style.height = "auto";
+            iframe3.style.display = "none";
+            aba3.style.height = "auto";
             document.getElementById('seta2').style.transform = 'rotate(360deg)'
-
+            document.getElementById('seta3').style.transform = 'rotate(360deg)'
         }else{
             iframe2.style.display = "block";
             aba2.style.height = "650px";
             document.getElementById('seta2').style.transform = 'rotate(180deg)'
+            iframe3.style.display = "block";
+            aba3.style.height = "650px";
+            document.getElementById('seta3').style.transform = 'rotate(180deg)'
         }    
     } 
 </script>
