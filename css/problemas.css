@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    padding: 20px;
+}
+
+
+.form {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.separa {
+    width: 83%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 3px red solid;
+    padding: 10px;
+    height: 250px;
+}
+
+.d1{
+    position: absolute;
+    width: 25%;
+    height: 80px;
+    margin-right: 400px;
+}
+
+.d2{
+    position: absolute;
+    width: 25%;
+    height: 80px;
+    margin-top: 85px;
+    margin-right: 400px;
+}
+
+.select{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 00px;
+}
+
+.arruma{
+    position: absolute;
+    margin-left: 25px;
+}
+
+.arruma2{
+    position: absolute;
+    margin-left: 25px;
+}
+
+.d3{
+    position: absolute;
+    width: 25%;
+    height: 80px;
+    margin-top: 169px;
+    margin-right: 400px;
+}
+
+.d4{
+    position: absolute;
+    width: 25%;
+    height: 80px;
+    margin-left: 400px ;
+}
+
+.d5{
+    position: absolute;
+    width: 25%;
+    height: 80px;
+    margin-top: 85px;
+    margin-left: 400px ;
+}
+
+.d6{
+    position: absolute;
+    width: 25%;
+    height: 80px;
+    margin-top: 169px;
+    margin-left: 400px ;
+}
+
+.form input {
+    margin-top: 15px;
+}
+
+.btn {
+    border-radius: 20px;
+    width: 80px;
+    height: 30px;
+    color: white;
+    background-color: red;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.btn:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+.texto1 {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.escreve {
+    position: absolute;
+    margin-top: -5.5px;
+    margin-left: 25px;
+}
+
+.agrupamento input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    margin-top: 30px;
+    left: 10;
+    height: 21.5px;
+    width: 21.5px;
+    background-color: #eeeeeed8;
+    cursor: pointer;
+}
+
+.agrupamento:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.agrupamento input:checked~.checkmark {
+    background-image: url("../image/X.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+}
+
+.agrupamento:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.agrupamento input:checked~.checkmark:after {
+    display: block;
+}
+
+.agrupamento .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+input[type="text"] {
+    padding: 0.6rem;
+    width: 60%;
+    height: 2px;
+    border: 2px solid #1f0025;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: all .3s;
+    font-family: 'Poppins', sans-serif;
+    margin: 2%
+}
+
+.checkmark1 {
+    position: absolute;
+    margin-top: 0px;
+    left: 10;
+    height: 21.5px;
+    width: 21.5px;
+    background-color: #eeeeeed8;
+    cursor: pointer;
+}
+
+.agrupamento:hover input~.checkmark1 {
+    background-color: #ccc;
+}
+
+.agrupamento input:checked~.checkmark1 {
+    background-image: url("../image/X.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+}
+
+.agrupamento:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.agrupamento input:checked~.checkmark1:after {
+    display: block;
+}
+
+.agrupamento .checkmark1:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkmark2 {
+    position: absolute;
+    margin-top: 0px;
+    left: 10;
+    height: 21.5px;
+    width: 21.5px;
+    background-color: #eeeeeed8;
+    cursor: pointer;
+}
+
+.agrupamento:hover input~.checkmark2 {
+    background-color: #ccc;
+}
+
+.agrupamento input:checked~.checkmark2 {
+    background-image: url("../image/X.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+}
+
+.agrupamento:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.agrupamento input:checked~.checkmark2:after {
+    display: block;
+}
+
+.agrupamento .checkmark2:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.escreve {
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 25px;
+}
