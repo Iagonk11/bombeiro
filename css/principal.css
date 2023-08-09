@@ -13,67 +13,73 @@ body{
 }
 
 .abacima{
-    background-color: rgb(164, 19, 19);
-    width: 100%;
+    color: #000;
+    margin: 1%;
+    width: 65%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    justify-items: center;
+    border: 2px solid rgba(0, 0, 0, 0.211);
+    border-radius: 25px;
+    height: 40px;
+    transition: .3s;
+}
+
+.abacima:hover{
+    color: #fff;
+    background-color: red;
+}
+
+.abacima.active{
+    color: #fff;
+    background-color: red;
 }
 
 .abas{
     margin: 3%;
-    border: 2px solid rgb(164, 19, 19);
     overflow: hidden;
     border-radius: 20px;
-    font-size: 24px;
-    color: #fff;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     flex-direction: column;
-    width: 70%;
+    align-self: flex-start;
+    width: 20%;
     cursor: pointer;
-    transition: 1s;
-}
-
-.abasmen{
-    margin: 3%;
-    border: 2px solid rgb(164, 19, 19);
-    overflow: hidden;
-    border-radius: 20px;
-    font-size: 24px;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    width: 35%;
-    cursor: pointer;
-    transition: 1s;
+    transition: .5s;
 }
 
 iframe{
     display: none;
 }
 
-.fa-solid{
-    transition: .4s;
-}
-
 #iframe1{
     display: block;
 }
 
-#aba1{
-    height: 650px;
-}
-
-.lado{
+.formes{
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    justify-content: space-around;
+    justify-items: center;
     align-items: center;
     align-content: center;
-    justify-content: center;
-    justify-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.iframes{
+    width: 60%;
+    height: 65vh;
+
+}
+
+.iframes iframe{
+    border: none;
 }
