@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
-    <link rel="stylesheet" href="css/avaliacaopaciente.css">
+    <link rel="stylesheet" href="css/janelas.css">
 </head>
 
 <body>
@@ -25,7 +25,13 @@
                     <label for="opcao2" class="agrupamento">
                         <input type="checkbox" id="opcao2" name="opcao2" value="Opção 2">
                         <span class="checkmark"></span>
-                        <div class="texto1">Respiratório</div>
+                        <div class="arruma2">
+                            <select name="opcao2" id="opcao2">
+                                <option value="Respiratório">Respiratório</option>
+                                <option value="DPOC">DPOC</option>
+                                <option value="Inalação de Fumaça">Inalação de Fumaça</option>
+                            </select>
+                        </div>
                     </label><br>
 
                     <label for="opcao3" class="agrupamento">
@@ -42,6 +48,7 @@
                 </div>
 
                 <div class="d2">
+                    
                 </div>
 
                 <div class="d3">
@@ -53,7 +60,7 @@
                                 <option value="Obstétrico">Obstétrico</option>
                                 <option value="Parto Emergencial">Parto Emergencial</option>
                                 <option value="Gestante">Gestante</option>
-                                <option value="Hemor.Excessiva">Hemor.Excessiva</option>
+                                <option value="Hemor. Excessiva">Hemor. Excessiva</option>
                             </select>
                         </div>
                     </label><br>
@@ -65,29 +72,34 @@
                             <select name="opcao5" id="opcao5">
                                 <option value="Transporte">Transporte</option>
                                 <option value="Aéreo">Aéreo</option>
-                                <option value="Gestante">Clinico</option>
-                                <option value="Hemor.Excessiva">Emergencial</option>
-                                <option value="Hemor.Excessiva">Pós-Trauma</option>
-                                <option value="Hemor.Excessiva">Samu</option>
-                                <option value="Hemor.Excessiva">Sem Remoção</option>
+                                <option value="Clínico">Clínico</option>
+                                <option value="Emergencial">Emergencial</option>
+                                <option value="Pós-Trauma">Pós-Trauma</option>
+                                <option value="Samu">Samu</option>
+                                <option value="Sem Remoção">Sem Remoção</option>
                             </select>
                         </div>
                     </label><br>
 
-                    <label for="opcao6" class="agrupamento">
-                        <input type="checkbox" id="opcao6" name="opcao6" value="Opção 6">
+                    <label for="opcao3" class="agrupamento">
+                        <input type="checkbox" id="opcao3" name="opcao3" value="Opção 3">
                         <span class="checkmark"></span>
-                        <<div class="texto1"> Obstétrico
-                </div>>
-                </label><br>
+                        <div class="arruma2">
+                            <select name="opcao3" id="opcao3">
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Hiperglicemia">Hiperglicemia</option>
+                                <option value="Hipoglicemia">Hipoglicemia</option>
+                            </select>
+                        </div>
+                    </label><br>
+                </div>
             </div>
-    </div>
-    <br>
-    <div class="separa_btn">
-        <input type="submit" value="Enviar" class="btn">
-        <input type="reset" value="Limpar" class="btn">
-    </div>
-    </form>
+            <br>
+            <div class="separa_btn">
+                <input type="submit" value="Enviar" class="btn">
+                <input type="reset" value="Limpar" class="btn">
+            </div>
+        </form>
     </div>
 </body>
 
