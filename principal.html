@@ -44,7 +44,7 @@
             <div class="linha">DESP.:&nbsp;&nbsp;<p>1490</p>&nbsp;&nbsp;&nbsp;&nbsp;H. CH.:&nbsp;&nbsp;<p>1490</p></div>
             <div class="linha">KM FINAL:&nbsp;&nbsp;<p>1490</p></div>
             <div class="linha">CÓD. SIA/SUS:&nbsp;&nbsp;<p>1490</p></div>
-        </div> 
+        </div>
         <div class="cennav2">
             <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
             <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
@@ -61,18 +61,19 @@
         </div>
     </div>
 </div>
-    <div class="formes">
-    <div class="abas">
-        <h3>Tópicos:</h3>
-        <div class="abacima active" onclick="abrir();" id="aba1"><h3>Tipo de Ocorrência</h3><i class="fa-solid fa-chevron-right" id="seta"></i></div>
-        <div class="abacima" onclick="abrir2();" id="aba2"><h3>Vítima Era</h3><i class="fa-solid fa-chevron-right" id="seta2"></i></div>
-        <div class="abacima" onclick="abrir3();" id="aba3"><h3>Problemas</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
-    </div>
-    
-    <div class="iframes">
+
+    <div class="abas" onclick="abrir();" id="aba1">
+        <div class="abacima"><h3>Tipo de Ocorrência (Pré Hospitalar)</h3><i class="fa-solid fa-chevron-down" id="seta"></i></div>
         <iframe src="avaliacaopaciente.html" id="iframe1" width="100%" height="100%"></iframe>
-        <iframe src="problemas.html" id="iframe3" width="100%" height="100%"></iframe>
+    </div>
+    <div class="lado">
+    <div class="abasmen" onclick="abrir2();" id="aba2">
+        <div class="abacima"><h3>Vítima Era:</h3><i class="fa-solid fa-chevron-down" id="seta2"></i></div>
         <iframe src="vitimaera.html" id="iframe2" width="100%" height="100%"></iframe>
+    </div>
+    <div class="abasmen" onclick="abrir2();" id="aba3">
+        <div class="abacima"><h3>Problemas:</h3><i class="fa-solid fa-chevron-down" id="seta3"></i></div>
+        <iframe src="problemas.html" id="iframe3" width="100%" height="100%"></iframe>
     </div>
 </div>
 </body>
@@ -92,30 +93,34 @@
     }
 
     function abrir(){
-       aba1.classList.add('active');
-       aba2.classList.remove('active');
-       aba3.classList.remove('active');
-       iframe1.style.display = 'block';
-       iframe2.style.display = 'none';
-       iframe3.style.display = 'none'
-    }
+        if(iframe1.style.display == "none" && aba1.style.height == "auto"){
+            iframe1.style.display = "block";
+            aba1.style.height = "650px";
+            document.getElementById('seta').style.transform = 'rotate(180deg)'
+
+        }else{
+            iframe1.style.display = "none";
+            aba1.style.height = "auto";
+            document.getElementById('seta').style.transform = 'rotate(360deg)'
+        }    
+    } 
 
     function abrir2(){
-       aba2.classList.add('active');
-       aba1.classList.remove('active');
-       aba3.classList.remove('active');
-       iframe2.style.display = 'block';
-       iframe1.style.display = 'none';
-       iframe3.style.display = 'none';
-    }
-
-    function abrir3(){
-       aba3.classList.add('active');
-       aba1.classList.remove('active');
-       aba2.classList.remove('active');
-       iframe3.style.display = 'block';
-       iframe1.style.display = 'none';
-       iframe2.style.display = 'none';
-    }
+        if(iframe2.style.display == "block" && aba2.style.height == "650px"){
+            iframe2.style.display = "none";
+            aba2.style.height = "auto";
+            iframe3.style.display = "none";
+            aba3.style.height = "auto";
+            document.getElementById('seta2').style.transform = 'rotate(360deg)'
+            document.getElementById('seta3').style.transform = 'rotate(360deg)'
+        }else{
+            iframe2.style.display = "block";
+            aba2.style.height = "650px";
+            document.getElementById('seta2').style.transform = 'rotate(180deg)'
+            iframe3.style.display = "block";
+            aba3.style.height = "650px";
+            document.getElementById('seta3').style.transform = 'rotate(180deg)'
+        }    
+    } 
 </script>
 </html>

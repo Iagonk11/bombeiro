@@ -39,19 +39,23 @@
       </form>
       <div class="alert alert-info" style="display: none;"></div>
     </div>
+    <div class="local_ocorrencia">
+      Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
+    </div>
       <div class="acompanhante ">
         Acompanhante: <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
         <input type="text" id="acompanhante2" style="display: none;">
         <br>
       </div>
 
-      <div class="idade" >
-        Idade: <input type="checkbox" id="idade2" onchange="mostrarTextbox2()">
-        <input type="text" id="idade3" style="display: none;">
-        <br>
-      </div>
+      <div class="idade" style="display: none;" id="div_idade" >
+        Idade:
         
+        <input type="text" id="idade3" >
+        
+      </div>
   </div>
+  
 </body>
 <script>
   const phoneInputField = document.querySelector("#phone");
@@ -95,26 +99,24 @@
 
     var checkbox = document.getElementById("acompanhante")
 
+    var input2 = document.getElementById("div_idade")
+
+
+ 
+
     if (checkbox.checked) {
       input.style.display = "block";
+      input2.style.display = "block";
 
     } else {
       input.style.display = "none";
+      input2.style.display = "none";
     }
 
   }
 
   function mostrarTextbox2() {
-    var input = document.getElementById("idade3")
-
-    var checkbox = document.getElementById("idade2")
-
-    if (checkbox.checked) {
-      input.style.display = "block";
-
-    } else {
-      input.style.display = "none";
-    }
+ 
 
   }
 
