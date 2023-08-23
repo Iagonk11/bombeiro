@@ -1,3 +1,26 @@
 *{
-    background-image: linear-gradient(to right, rgb(57, 155, 247), #33338D);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.formulario{
+    height: 100vh;
+    width: 100%;
+    background-color: #33338D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.forms{
+    height: 50%;
+    background-color: #7171f4;
+    display: flex;
+    flex-direction: column;
+    padding: 30px, 40px;
+    border-radius: 9px;
+    justify-content: center;
 }

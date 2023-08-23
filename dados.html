@@ -2,53 +2,128 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados Pessoais</title>
-    <link rel="icon" type="image/png" href="image/logo_noar.png">
-    <link rel="stylesheet" href="css/dados.css">
-    <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-   />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados Pessoais</title>
+  <link rel="icon" type="image/png" href="image/logo_noar.png">
+  <link rel="stylesheet" href="dados.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 
 <body>
+  <fieldset>
     <div class="formulario">
-        <input type="date" id="date">
-        <div class="genero">
-            Sexo:
-            Masculino<input type="checkbox" id="genero"> Feminino<input type="checkbox" id="genero2">
-        </div>
-        <div class="hospital">
-            Nome do Hospital: <input type="text" id="local">
-        </div>
-        <div class="nome">
-            Nome: <input type="text" id="nome"> 
-        </div>
-        <div class="idade">
-            Idade: <input type="text" id="idade" >
-        </div>
-        <div class="identidade">
-            RG/CPF Paciente: <input type="text" id="identidade">
-        </div>
-        
-        <div class="telefone">
-            <form id="telefone" onsubmit="process(event)">
-              Telefone:
-              <input id="phone" type="tel" name="phone" />
-            </form>
-           </div>
-        
+      <div class="forms">
+      <input type="date" id="date">
+      <div class="genero">
+        Sexo:
+        Masculino<input type="checkbox" id="genero"> Feminino<input type="checkbox" id="genero2">
+      </div>
+      <div class="hospital">
+        Nome do Hospital: <input type="text" id="local">
+      </div>
+      <div class="nome">
+        Nome: <input type="text" id="nome">
+      </div>
+      <div class="idade">
+        Idade: <input type="text" id="idade">
+      </div>
+      <div class="identidade">
+        RG/CPF Paciente: <input type="text" id="identidade">
+      </div>
+
+      <div class="telefone">
+        <form id="telefone" onsubmit="process(event)">
+          Telefone:
+          <input id="phone" type="tel" name="phone" />
+        </form>
+        <div class="alert alert-info" style="display: none;"></div>
+      </div>
+      <div class="local_ocorrencia">
+        Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
+      </div>
+      <div class="acompanhante ">
+        Acompanhante: <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
+        <input type="text" id="acompanhante2" style="display: none;">
+        <br>
+      </div>
+
+      <div class="idade" style="display: none;" id="div_idade">
+        Idade:
+
+        <input type="text" id="idade3">
+
+      </div>
     </div>
+    </div>
+  </fieldset>
+
 </body>
 <script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-      utilsScript:
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-  </script>
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+
+  const info = document.querySelector(".alert-info");
+
+  function process(event) {
+    event.preventDefault();
+
+    const phoneNumber = phoneInput.getNumber();
+
+    info.style.display = "";
+    info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+  }
+
+  function getIp(callback) {
+    fetch('https://ipinfo.io/json?token=<your token>', { headers: { 'Accept': 'application/json' } })
+      .then((resp) => resp.json())
+      .catch(() => {
+        return {
+          country: 'br',
+        };
+      })
+      .then((resp) => callback(resp.country));
+  }
+
+
+  const phoneNumber = window.intlTelInput(phoneInputField, {
+    preferredCountries: ["br", "us", "in", "de"],
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+
+
+  function mostrarTextbox() {
+    var input = document.getElementById("acompanhante2")
+
+    var checkbox = document.getElementById("acompanhante")
+
+    var input2 = document.getElementById("div_idade")
+
+
+
+
+    if (checkbox.checked) {
+      input.style.display = "block";
+      input2.style.display = "block";
+
+    } else {
+      input.style.display = "none";
+      input2.style.display = "none";
+    }
+
+  }
+
+  function mostrarTextbox2() {
+
+
+  }
+
+</script>
+
 </html>
