@@ -16,47 +16,53 @@
   <fieldset>
     <div class="formulario">
       <div class="forms">
-      <input type="date" id="date">
-      <div class="genero">
-        Sexo:
-        Masculino<input type="checkbox" id="genero"> Feminino<input type="checkbox" id="genero2">
-      </div>
-      <div class="hospital">
-        Nome do Hospital: <input type="text" id="local">
-      </div>
-      <div class="nome">
-        Nome: <input type="text" id="nome">
-      </div>
-      <div class="idade">
-        Idade: <input type="text" id="idade">
-      </div>
-      <div class="identidade">
-        RG/CPF Paciente: <input type="text" id="identidade">
-      </div>
+        Data:<input type="date" id="date">
+        <div class="genero">
+          Sexo:
+          <select name="sexo" id="sexo">
+            <option value="-----">-----</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+        <div class="hospital">
+          Nome do Hospital: <input type="text" id="local">
+        </div>
+        <div class="nome">
+          Nome: <input type="text" id="nome">
+        </div>
+        <div class="idade">
+          Idade: <input type="text" id="idade">
+        </div>
+        <div class="identidade">
+          RG/CPF Paciente: <input type="text" id="identidade">
+        </div>
 
-      <div class="telefone">
-        <form id="telefone" onsubmit="process(event)">
-          Telefone:
-          <input id="phone" type="tel" name="phone" />
-        </form>
-        <div class="alert alert-info" style="display: none;"></div>
-      </div>
-      <div class="local_ocorrencia">
-        Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
-      </div>
-      <div class="acompanhante ">
-        Acompanhante: <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
-        <input type="text" id="acompanhante2" style="display: none;">
-        <br>
-      </div>
+        <div class="telefone">
+          <form id="telefone" onsubmit="process(event)">
+            Telefone:
+            <input id="phone" type="tel" name="phone" />
+          </form>
+          <div class="alert alert-info" style="display: none;"></div>
+        </div>
+        <div class="local_ocorrencia">
+          Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
+        </div>
+        <div class="acompanhante ">
+          Acompanhante: <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
+          <input type="text" id="acompanhante2" style="display: none;">
+          <br>
+        </div>
 
-      <div class="idade" style="display: none;" id="div_idade">
-        Idade:
+        <div class="idade2" style="display: none;" id="div_idade">
+          Idade:
+          <input type="text" id="idade3">
 
-        <input type="text" id="idade3">
-
+        </div>
+        <div class="separa_btn">
+          <input type="submit" value="Enviar" class="btn">
+        </div>
       </div>
-    </div>
     </div>
   </fieldset>
 

@@ -23,4 +23,50 @@
     padding: 30px, 40px;
     border-radius: 9px;
     justify-content: center;
+    justify-content: space-between;
 }
+
+input[type="date"]{
+    width: 100px;
+    margin-left: 5px;
+    border-radius: 7px;
+}
+
+input[id="idade"]{
+    width: 50px;
+}
+
+input[id="acompanhante2"]{
+    margin-left: 8px;
+}
+
+.idade2{
+    margin-left: 5px;
+    margin-bottom: 6px;
+}
+
+input[id="local_ocorrencia"]{
+    margin-right: 4px;
+}
+
+input[type="text"]{
+    border-radius: 8px;
+}
+
+select{
+    border-radius: 7px;
+}
+
+.btn {
+    border-radius: 8px;
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: #33338D;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin: 3%;
+    font-size: 14px
+}
+
