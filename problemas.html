@@ -8,24 +8,68 @@
     <title>Atendimento de Ocorrências</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
     <link rel="stylesheet" href="css/janelas.css">
+    <script src="jquery-1.8.2.min.js"></script>
 </head>
+<script>
+    function Listar(){
+		// A variável "dados" conterá todos os campos do <form id="form1">
+		var dados = $('#form1').serialize(); // TODOS OS CAMPOS DO <form> DEVEM TER 'name='
+		
+		$.ajax({
+			type: "POST",
+			url: "arquivo.php",
+			data: dados,
+			dataType: 'json',
+							
+			success: function(meu_json)
+			{
+					  
+				var valores = meu_json;       
+                var lista = valores.dados;                   
+                for(x=0;x<lista.length;x++)
+            {
+                console.log(lista[x].op1);                         
+                console.log(lista[x].op2);                       
+                console.log(lista[x].op3);         
+                console.log(lista[x].op4); 
+                console.log(lista[x].op5);
+                console.log(lista[x].op6);               
+                console.log("  ");
 
+            }},
+			error: function(xhr, status, error) {
+				// Aqui poderíamos preencher uma <div> com o innerHTML por exemplo
+				console.error('Ocorreu um erro ao enviar os dados: ' + error);
+			  },
+			beforeSend: function(xhr) {
+				// Faz algo antes do envio, como exibir uma animação por exemplo.
+			},
+			complete: function(xhr, status) {
+				// Faz algo após a conclusão, como ocultar uma animação por exemplo. 
+				// Vai ser executado mesmo se ocorrer um erro.
+			},
+			timeout: 5000    // Define um tempo limite de 5 segundos (5000 milissegundos)
+		});
+		
+		
+	}
+</script>
 <body>
 
     <div class="container">
-        <form action="#" method="post" class="form">
+        <form action="arquivo.php" method="post" class="form" id="form1">
             <div class="separa">
                 <div class="d1">
-                    <label for="opcao1" class="agrupamento">
-                        <input type="checkbox" id="opcao1" name="opcao1" value="Opção 1">
+                    <label for="op1" class="agrupamento">
+                        <input type="checkbox" id="op1" name="op1" value="Opção 1">
                         <span class="checkmark"></span>
                         <div class="texto1">Psiquiátrico</div>
                     </label><br>
 
-                    <label for="opcao2" class="agrupamento">
+                    <label for="op2" class="agrupamento">
                         <div class="titulo"><p>Respiratório</p></div>
                         <div class="arruma2">
-                            <select name="opcao2" id="opcao2">
+                            <select name="op2" id="op2">
                                 <option value="-----">-----</option>
                                 <option value="DPOC">DPOC</option>
                                 <option value="Inalação de Fumaça">Inalação de Fumaça</option>
@@ -33,10 +77,10 @@
                         </div>
                     </label><br>
 
-                    <label for="opcao3" class="agrupamento">
+                    <label for="op3" class="agrupamento">
                         <div class="titulo"><p>Diabetes</p></div>
                         <div class="arruma2">
-                            <select name="opcao3" id="opcao3">
+                            <select name="op3" id="op3">
                                 <option value="-----">-----</option>
                                 <option value="Hiperglicemia">Hiperglicemia</option>
                                 <option value="Hipoglicemia">Hipoglicemia</option>
@@ -50,10 +94,10 @@
                 </div>
 
                 <div class="d3">
-                    <label for="opcao4" class="agrupamento">
+                    <label for="op4" class="agrupamento">
                         <div class="titulo"><p>Obstétrico</p></div>
                         <div class="arruma2">
-                            <select name="opcao4" id="opcao4">
+                            <select name="op4" id="op4">
                                 <option value="-----">-----</option>
                                 <option value="Parto Emergencial">Parto Emergencial</option>
                                 <option value="Gestante">Gestante</option>
@@ -62,10 +106,10 @@
                         </div>
                     </label><br>
 
-                    <label for="opcao5" class="agrupamento">
+                    <label for="op5" class="agrupamento">
                         <div class="titulo"><p>Transporte</p></div>
                         <div class="arruma2">
-                            <select name="opcao5" id="opcao5">
+                            <select name="op5" id="op5">
                                 <option value="-----">-----</option>
                                 <option value="Aéreo">Aéreo</option>
                                 <option value="Clínico">Clínico</option>
@@ -77,10 +121,10 @@
                         </div>
                     </label><br>
 
-                    <label for="opcao6" class="agrupamento">
+                    <label for="op6" class="agrupamento">
                         <div class="titulo"><p>Outro</p></div>
                         <div class="arruma2">
-                            <input type="text" placeholder="Digite Aqui">
+                            <input type="text" placeholder="Digite Aqui" name="op6">
                         </div>
                     </label><br>
                 </div>

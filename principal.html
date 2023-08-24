@@ -30,8 +30,8 @@
         <div class="dirnav">
             <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
             <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
-            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Matheus Persh Zenere</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>90</p></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Maico Petis</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p></p></div>
             <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
         </div>
         <div class="dado" onclick="dados();"><i class="fa-solid fa-caret-down"></i></div>
@@ -44,7 +44,7 @@
             <div class="linha">DESP.:&nbsp;&nbsp;<p>1490</p>&nbsp;&nbsp;&nbsp;&nbsp;H. CH.:&nbsp;&nbsp;<p>1490</p></div>
             <div class="linha">KM FINAL:&nbsp;&nbsp;<p>1490</p></div>
             <div class="linha">CÓD. SIA/SUS:&nbsp;&nbsp;<p>1490</p></div>
-        </div>
+        </div> 
         <div class="cennav2">
             <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
             <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
@@ -55,27 +55,33 @@
         <div class="dirnav2">
             <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
             <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
-            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Matheus Persh Zenere</p></div>
-            <div class="linha">IDADE:&nbsp;&nbsp;<p>90</p></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Maico Petis</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>18</p></p></div>
             <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
         </div>
     </div>
 </div>
-
-    <div class="abas" onclick="abrir();" id="aba1">
-        <div class="abacima"><h3>Tipo de Ocorrência (Pré Hospitalar)</h3><i class="fa-solid fa-chevron-down" id="seta"></i></div>
+    <div class="formes">
+    <div class="abas">
+        <h3>Tópicos:</h3>
+        <div class="abacima active" onclick="abrir();" id="aba1"><h3>Tipo de Ocorrência</h3><i class="fa-solid fa-chevron-right" id="seta"></i></div>
+        <div class="abacima" onclick="abrir2();" id="aba2"><h3>Vítima Era</h3><i class="fa-solid fa-chevron-right" id="seta2"></i></div>
+        <div class="abacima" onclick="abrir3();" id="aba3"><h3>Problemas</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
+        <div class="abacima" onclick="abrir4();" id="aba4"><h3>Procedimentos</h3><i class="fa-solid fa-chevron-right" id="seta4"></i></div>
+        <div class="abacima" onclick="abrir5();" id="aba5"><h3>Condução</h3><i class="fa-solid fa-chevron-right" id="seta5"></i></div>
+    </div>
+    
+    <div class="iframes">
         <iframe src="avaliacaopaciente.html" id="iframe1" width="100%" height="100%"></iframe>
-    </div>
-    <div class="lado">
-    <div class="abasmen" onclick="abrir2();" id="aba2">
-        <div class="abacima"><h3>Vítima Era:</h3><i class="fa-solid fa-chevron-down" id="seta2"></i></div>
-        <iframe src="vitimaera.html" id="iframe2" width="100%" height="100%"></iframe>
-    </div>
-    <div class="abasmen" onclick="abrir2();" id="aba3">
-        <div class="abacima"><h3>Problemas:</h3><i class="fa-solid fa-chevron-down" id="seta3"></i></div>
         <iframe src="problemas.html" id="iframe3" width="100%" height="100%"></iframe>
+        <iframe src="vitimaera.html" id="iframe2" width="100%" height="100%"></iframe>
+        <iframe src="procedimentos.html" id="iframe4" width="100%" height="100%"></iframe>
+        <iframe src="conducao.html" id="iframe5" width="100%" height="100%"></iframe>
     </div>
 </div>
+
+    <a href="termo.pdf" target="_blank" class="termo"><i class="fa-solid fa-file-circle-xmark"></i></a>
+
 </body>
 
 <script>
@@ -83,6 +89,12 @@
     var aba1 = document.getElementById('aba1');
     var iframe2 = document.getElementById('iframe2');
     var aba2 = document.getElementById('aba2');
+    var iframe3 = document.getElementById('iframe3');
+    var aba3= document.getElementById('aba3');
+    var iframe4 = document.getElementById('iframe4');
+    var aba4 = document.getElementById('aba4');
+    var iframe5 = document.getElementById('iframe5');
+    var aba5 = document.getElementById('aba5');
 
     function dados(){
         document.getElementById('dado').style.display = 'block'
@@ -93,34 +105,68 @@
     }
 
     function abrir(){
-        if(iframe1.style.display == "none" && aba1.style.height == "auto"){
-            iframe1.style.display = "block";
-            aba1.style.height = "650px";
-            document.getElementById('seta').style.transform = 'rotate(180deg)'
-
-        }else{
-            iframe1.style.display = "none";
-            aba1.style.height = "auto";
-            document.getElementById('seta').style.transform = 'rotate(360deg)'
-        }    
-    } 
+       aba1.classList.add('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       aba5.classList.remove('active');
+       aba4.classList.remove('active');
+       iframe1.style.display = 'block';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe4.style.display = 'none';
+       iframe5.style.display = 'none';
+    }
 
     function abrir2(){
-        if(iframe2.style.display == "block" && aba2.style.height == "650px"){
-            iframe2.style.display = "none";
-            aba2.style.height = "auto";
-            iframe3.style.display = "none";
-            aba3.style.height = "auto";
-            document.getElementById('seta2').style.transform = 'rotate(360deg)'
-            document.getElementById('seta3').style.transform = 'rotate(360deg)'
-        }else{
-            iframe2.style.display = "block";
-            aba2.style.height = "650px";
-            document.getElementById('seta2').style.transform = 'rotate(180deg)'
-            iframe3.style.display = "block";
-            aba3.style.height = "650px";
-            document.getElementById('seta3').style.transform = 'rotate(180deg)'
-        }    
-    } 
+       aba2.classList.add('active');
+       aba1.classList.remove('active');
+       aba3.classList.remove('active');
+       aba5.classList.remove('active');
+       aba4.classList.remove('active');
+       iframe2.style.display = 'block';
+       iframe1.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe5.style.display = 'none';
+       iframe4.style.display = 'none';
+    }
+
+    function abrir3(){
+       aba3.classList.add('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       aba5.classList.remove('active');
+       aba4.classList.remove('active');
+       iframe3.style.display = 'block';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+       iframe5.style.display = 'none';
+       iframe4.style.display = 'none';
+    }
+
+    function abrir4(){
+       aba4.classList.add('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       aba5.classList.remove('active');
+       iframe4.style.display = 'block';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe5.style.display = 'none';
+    }
+
+    function abrir5(){
+       aba5.classList.add('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       aba4.classList.remove('active');
+       iframe5.style.display = 'block';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe4.style.display = 'none';
+    }
 </script>
 </html>
