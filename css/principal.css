@@ -83,3 +83,26 @@ iframe{
 .iframes iframe{
     border: none;
 }
+
+.termo{
+    background-color: rgb(187, 7, 7);
+    font-size: 20px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+}
+
+.termo:hover{
+    background-color: rgb(134, 16, 16);
+    transition: .5s;
+}

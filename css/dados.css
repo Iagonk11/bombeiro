@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: url('../image/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+.formulario{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(14, 11, 56, 0.63);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    
+}
+
+fieldset{
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    margin-top: -43px;
+}
+
+.formulario h3{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 30px;
+}
+
+form{
+    width: 25%;
+    height: 100%;
+    
+    background-color: #131377bb;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 9px;
+    justify-content: center;
+    justify-content: space-between;
+    color: #fff;
+    margin-top: 20px;
+}
+
+input{
+    background-color: #3f3f94bb;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 1%;
+    width:100%
+}
+
+select{
+    background-color: #3f3f94bb;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 1%;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 8px;
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: #2f2f9f;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin: 3%;
+    font-size: 14px
+}
+
+.genero{
+    margin-top: 2%;
+    
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.382);
+}
+
+.telefone input{
+    width: 100%
+}
+
+.separa_btn{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.btn:hover{
+    background-color: #080847;
+    transition: .2s;
+}
+
+#acompanhant{
+    margin-left: 5%;
+}
