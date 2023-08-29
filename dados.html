@@ -7,16 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dados Pessoais</title>
   <link rel="icon" type="image/png" href="image/logo_noar.png">
-  <link rel="stylesheet" href="dados.css">
+  <link rel="stylesheet" href="css/dados.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 
 <body>
-  <fieldset>
     <div class="formulario">
+        <h3>Insira os Dados do Paciente</h3>
+        <fieldset>
+    <form method="post" action="">
       <div class="forms">
-        Data:<input type="date" id="date">
+        <div class="data">Data:<input type="date" id="date"></div>
         <div class="genero">
           Sexo:
           <select name="sexo" id="sexo">
@@ -29,7 +31,7 @@
           Nome do Hospital: <input type="text" id="local">
         </div>
         <div class="nome">
-          Nome: <input type="text" id="nome">
+          Nome do Paciente: <input type="text" id="nome">
         </div>
         <div class="idade">
           Idade: <input type="text" id="idade">
@@ -39,34 +41,42 @@
         </div>
 
         <div class="telefone">
-          <form id="telefone" onsubmit="process(event)">
-            Telefone:
+            Telefone: <br>
             <input id="phone" type="tel" name="phone" />
-          </form>
           <div class="alert alert-info" style="display: none;"></div>
         </div>
         <div class="local_ocorrencia">
           Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
         </div>
-        <div class="acompanhante ">
-          Acompanhante: <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
-          <input type="text" id="acompanhante2" style="display: none;">
-          <br>
-        </div>
-
-        <div class="idade2" style="display: none;" id="div_idade">
-          Idade:
-          <input type="text" id="idade3">
-
-        </div>
+        Acompanhante? <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
         <div class="separa_btn">
           <input type="submit" value="Enviar" class="btn">
+          <input type="reset" value="Limpar" class="btn">
         </div>
       </div>
-    </div>
-  </fieldset>
+    </form>
 
+<form method="post" action="" id="acompanhant" style="display: none;">
+    <div class="acompanhante ">
+        Acompanhante:
+        <input type="text" id="acompanhante2">
+        <br>
+      </div>
+
+      <div class="idade2" id="div_idade">
+        Idade:
+        <input type="text" id="idade3">
+
+      </div>
+      <div class="separa_btn">
+        <input type="submit" value="Enviar" class="btn">
+        <input type="reset" value="Limpar" class="btn">
+      </div>
+</form>
+</fieldset>
+</div>
 </body>
+
 <script>
   const phoneInputField = document.querySelector("#phone");
   const phoneInput = window.intlTelInput(phoneInputField, {
@@ -105,22 +115,17 @@
 
 
   function mostrarTextbox() {
-    var input = document.getElementById("acompanhante2")
-
     var checkbox = document.getElementById("acompanhante")
-
-    var input2 = document.getElementById("div_idade")
+    var form = document.getElementById("acompanhant")
 
 
 
 
     if (checkbox.checked) {
-      input.style.display = "block";
-      input2.style.display = "block";
-
+      acompanhant.style.display = "block";
+     
     } else {
-      input.style.display = "none";
-      input2.style.display = "none";
+      acompanhant.style.display = "none";
     }
 
   }
