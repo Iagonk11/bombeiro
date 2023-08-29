@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombeiros</title>
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="icon" type="image/png" href="image/logobomb.png">
+    <script src="https://kit.fontawesome.com/f87260a7c7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="port">
+            <div class="logo"><img src="image/logobomb.png"><img src="image/medicina.png"></div>
+            <div class="titulo">
+            <h2>Bombeiros Voluntários</h2>
+            <h4>Assoc. de Serviços Sociais Voluntários de Guaramirim</h4>
+        </div>
+        </div>
+        <div class="cennav">
+            <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
+            <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
+            <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
+            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
+        </div>
+        <div class="dirnav">
+            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Matheus Persh Zenere</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>90</p></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+        </div>
+        <div class="dado" onclick="dados();"><i class="fa-solid fa-caret-down"></i></div>
+    </div>
+    <div class="telapreta" id="dado" onclick="fdado();">
+    <div class="dadosos">
+        <div class="esqnav">
+            <div class="linha">Nº USB:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">Nº OCORRÊNCIA:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">DESP.:&nbsp;&nbsp;<p>1490</p>&nbsp;&nbsp;&nbsp;&nbsp;H. CH.:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">KM FINAL:&nbsp;&nbsp;<p>1490</p></div>
+            <div class="linha">CÓD. SIA/SUS:&nbsp;&nbsp;<p>1490</p></div>
+        </div> 
+        <div class="cennav2">
+            <div class="linha">DATA:&nbsp;&nbsp;<p>14/07/2023</p></div>
+            <div class="linha">NOME:&nbsp;&nbsp;<p>Cleriton Sávio</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>24</p></div>
+            <div class="linha">SEXO:&nbsp;&nbsp;<p>M</p></div>
+            <div class="linha">NOME DO HOSPITAL:&nbsp;&nbsp;<p>Dona Helena</p></div>
+        </div>
+        <div class="dirnav2">
+            <div class="linha">RG/CPF PACIENTE:&nbsp;&nbsp;<p>7.203.654</p></div>
+            <div class="linha">TELEFONE:&nbsp;&nbsp;<p>(47) 98816-1658</p></p></div>
+            <div class="linha">ACOMPANHANTE:&nbsp;&nbsp;<p>Matheus Persh Zenere</p></div>
+            <div class="linha">IDADE:&nbsp;&nbsp;<p>90</p></p></div>
+            <div class="linha">LOCAL DA OCORRÊNCIA:&nbsp;&nbsp;<p>Quadra do Adolfo</p></div>
+        </div>
+    </div>
+</div>
+    <div class="formes">
+    <div class="abas">
+        <h3>Tópicos:</h3>
+        <div class="abacima active" onclick="abrir();" id="aba1"><h3>Tipo de Ocorrência</h3><i class="fa-solid fa-chevron-right" id="seta"></i></div>
+        <div class="abacima" onclick="abrir2();" id="aba2"><h3>Vítima Era</h3><i class="fa-solid fa-chevron-right" id="seta2"></i></div>
+        <div class="abacima" onclick="abrir3();" id="aba3"><h3>Problemas</h3><i class="fa-solid fa-chevron-right" id="seta3"></i></div>
+    </div>
+    
+    <div class="iframes">
+        <iframe src="avaliacaopaciente.html" id="iframe1" width="100%" height="100%"></iframe>
+        <iframe src="problemas.html" id="iframe3" width="100%" height="100%"></iframe>
+        <iframe src="vitimaera.html" id="iframe2" width="100%" height="100%"></iframe>
+    </div>
+</div>
+</body>
+
+<script>
+    var iframe1 = document.getElementById('iframe1');
+    var aba1 = document.getElementById('aba1');
+    var iframe2 = document.getElementById('iframe2');
+    var aba2 = document.getElementById('aba2');
+
+    function dados(){
+        document.getElementById('dado').style.display = 'block'
+    }
+
+    function fdado(){
+        document.getElementById('dado').style.display = 'none'
+    }
+
+    function abrir(){
+       aba1.classList.add('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       iframe1.style.display = 'block';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none'
+    }
+
+    function abrir2(){
+       aba2.classList.add('active');
+       aba1.classList.remove('active');
+       aba3.classList.remove('active');
+       iframe2.style.display = 'block';
+       iframe1.style.display = 'none';
+       iframe3.style.display = 'none';
+    }
+
+    function abrir3(){
+       aba3.classList.add('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       iframe3.style.display = 'block';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+    }
+</script>
+</html>

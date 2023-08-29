@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&display=swap');
+
+.navbar{
+    background-color: #33338D;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.cennav{
+    width: 30%
+}
+
+.dirnav{
+    width: 30%
+}
+
+.esqnav .linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    max-height: 41px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff
+}
+
+.cennav .linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    max-height: 40px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cennav2 .linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    max-height: 40px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.linha p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dirnav .linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    max-height: 40px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff
+}
+
+.dirnav2 .linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    max-height: 40px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff
+}
+
+.navbar h2{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.port{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    align-content: center;
+    height: 200px;
+    color: rgb(230, 224, 57);
+    overflow: hidden;
+}
+
+.port img{
+    height: 130px;
+    margin: 0
+}
+
+.logo{
+    margin: 0
+}
+
+.titulo{
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.linha{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.titulo h2{
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.titulo h4{
+    margin: 0;
+}
+
+.dado{
+    background-color: #33338D;
+    color: #fff;
+    font-size: 23px;
+    position: absolute;
+    top: 196px;
+    right: 0px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.dado:hover{
+    background-color: #1b1b63;
+}
+
+.telapreta{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.808);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.dadosos{
+    position: fixed;
+    width: 80%;
+    background-color: #33338D;
+    height: 45%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    top: 50%;
+    left: 50%;
+    margin-top: -10%;
+    margin-left: -40%;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+@media (max-width: 1200px){
+    .dadosos{
+        flex-direction: column;
+        height: 90%;
+        margin-top: -350px;
+        align-items: flex-start;
+        padding-left: 3%;
+    }
+}
+
+@media (max-width: 800px){
+    .cennav{
+        display: none;
+    }
+    .dirnav{
+        display: none;
+    }
+    
+    .port{
+        width: 100%
+    }
+}
+@media (max-width: 450px){
+    .port img{
+        height: 90px;
+        margin: 0
+    }
+    .port{
+        font-size: 10px;
+    }
+    .navbar h2{
+        font-size: 14px;
+    }
+
+    .navbar{
+        height: 160px;
+    }
+
+    .dado{
+        top: 154px
+    }
+}
