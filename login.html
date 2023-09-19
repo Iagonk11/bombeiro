@@ -1,63 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/a265de8dac.js" crossorigin="anonymous"></script>
+    <title>Login</title>
 </head>
+
 <body>
-    <main class="container">
-        <form class="login_form">
-            <div class="form_header">
-                <h1>Login</h1>
-            </div>
-
-            <div class="inputs">
-                <div class="input_box">
-                    <label for="name">
-                        Nome
-                        <div class="input_field">
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" id="name" name="name">
-                        </div>
-                    </label>
+    <div class="formulario">
+            <form class="login_form">
+                <div class="form_header">
+                    <h1>Login</h1>
+                    <img src="image/logo_noar.png" width="90px">
                 </div>
 
-                <div class="input_box">
-                    <label for="email">
-                        Email 
-                        <div class="input_field">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="email" id="email" name="email">
-                        </div>
-                    </label>
+                <div class="inputs">
+                    <div class="input_box">
+                        <label for="name">
+                            Nome
+                            <div class="input_field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="name" name="name">
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="input_box">
+                        <label for="email">
+                            Email
+                            <div class="input_field">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="email" name="email">
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="input_box">
+                        <label for="telefone">
+                            Telefone
+                            <div class="input_field">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="text" id="telefone" name="telefone">
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="input_box">
+                        <label for="senha">
+                            Senha
+                            <div class="input_field">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="senha" name="senha">
+                            </div>
+                        </label>
+                    </div>
+
                 </div>
 
-                <div class="input_box">
-                    <label for="telefone">
-                        Telefone 
-                        <div class="input_field">
-                            <i class="fa-solid fa-phone"></i>
-                            <input type="text" id="telefone" name="telefone">
-                        </div>
-                    </label>
-                </div>
+                <button type="submit" class="login_button" id="button">
+                    Login
+                </button>
 
-                <div class="input_box">
-                    <label for="senha">
-                        Senha 
-                        <div class="input_field">
-                            <i class="fa-solid fa-phone"></i>
-                            <input type="password" id="senha" name="senha">
-                        </div>
-                    </label>
-                </div>
+            </form>
+    </div>
 
-            </div>
+    <script>
+        var button = document.getElementById("button")
 
-        </form>
-    </main>
+        button.addEventListener("click", function() {
+            window.location.href = "http://localhost/bombeiro-master/dados.html"
+        });
+    </script>
+
 </body>
+
 </html>

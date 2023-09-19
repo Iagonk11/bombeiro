@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url('../image/bombeiro-loko.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    color: #fff;
+}
+
+.formulario{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(14, 11, 56, 0.63);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    
+}
+
+.login_form{
+    background-color: rgba(35, 31, 102, 0.63);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 30px;
+    height: fit-content;
+}
+
+.form_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_header h1{
+    font-size: 35px;
+    position: relative;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input_box label{
+    font-size: 17px;
+}
+
+.input_field{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid #fff;
+}
+
+.input_field i{
+    font-size: 19px;
+}
+
+.input_field input {
+    border: none;
+    background-color: transparent;
+    width: 250px;
+    font-size: 16px;
+    padding: 0px 5px;
+}
+
+.input_field input :focus{
+    outline: none;
+}
+
+.login_button{
+    border: none;
+    background: rgba(14, 11, 56, 0.63);
+    padding: 7px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #fff;
+}
