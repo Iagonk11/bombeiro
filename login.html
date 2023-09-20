@@ -13,66 +13,66 @@
 
 <body>
     <div class="formulario">
-            <form class="login_form">
-                <div class="form_header">
-                    <h1>Login</h1>
-                    <img src="image/logo_noar.png" width="90px">
+        <form class="login_form" method="post">
+            <div class="form_header">
+                <h1>Login</h1>
+                <img src="image/logo_noar.png" width="90px">
+            </div>
+
+            <div class="inputs">
+                <div class="input_box">
+                    <label for="name">
+                        Nome
+                        <div class="input_field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="name">
+                        </div>
+                    </label>
                 </div>
 
-                <div class="inputs">
-                    <div class="input_box">
-                        <label for="name">
-                            Nome
-                            <div class="input_field">
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" id="name" name="name">
-                            </div>
-                        </label>
-                    </div>
-
-                    <div class="input_box">
-                        <label for="email">
-                            Email
-                            <div class="input_field">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" id="email" name="email">
-                            </div>
-                        </label>
-                    </div>
-
-                    <div class="input_box">
-                        <label for="telefone">
-                            Telefone
-                            <div class="input_field">
-                                <i class="fa-solid fa-phone"></i>
-                                <input type="text" id="telefone" name="telefone">
-                            </div>
-                        </label>
-                    </div>
-
-                    <div class="input_box">
-                        <label for="senha">
-                            Senha
-                            <div class="input_field">
-                                <i class="fa-solid fa-key"></i>
-                                <input type="password" id="senha" name="senha">
-                            </div>
-                        </label>
-                    </div>
-
+                <div class="input_box">
+                    <label for="email">
+                        Email
+                        <div class="input_field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </label>
                 </div>
 
-                <button type="submit" class="login_button" id="button">
-                    Login
-                </button>
+                <div class="input_box">
+                    <label for="telefone">
+                        Telefone
+                        <div class="input_field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" id="telefone" name="telefone">
+                        </div>
+                    </label>
+                </div>
 
-            </form>
+                <div class="input_box">
+                    <label for="senha">
+                        Senha
+                        <div class="input_field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="senha" name="senha">
+                        </div>
+                    </label>
+                </div>
+
+            </div>
+
+            <a href="dados.html" class="login_button">
+                Login
+            </a>
+
+        </form>
     </div>
 
     <script>
         var button = document.getElementById("button")
 
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             window.location.href = "http://localhost/bombeiro-master/dados.html"
         });
     </script>
