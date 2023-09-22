@@ -1,10 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 body{
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
     box-sizing: border-box;
-    background-image: url('../image/bombeiro-chave.jpg');
-    background-repeat: none;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    background-image: url('../image/bombeiro-loko.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
+}
+
+.formulario{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(14, 11, 56, 0.63);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+form{
+    background-color: rgba(35, 31, 102, 0.63);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 30px;
+    height: fit-content;
+    color: #fff;
+}
+
+.agrupamento input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 10;
+    left: 10;
+    height: 21.5px;
+    width: 21.5px;
+    background-color: rgb(190, 189, 189);
+    cursor: pointer;
+}
+
+.agrupamento:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.agrupamento input:checked~.checkmark {
+    background-image: url("../image/X.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+}
+
+.agrupamento:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.agrupamento input:checked~.checkmark:after {
+    display: block;
+}
+
+.agrupamento .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
