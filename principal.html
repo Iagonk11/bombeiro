@@ -71,6 +71,7 @@
         <div class="abacima" onclick="abrir5();" id="aba5"><h3>Condução</h3><i class="fa-solid fa-chevron-right" id="seta5"></i></div>
         <div class="abacima" onclick="abrir6();" id="aba6"><h3>Sinais e Sintomas 1</h3><i class="fa-solid fa-chevron-right" id="seta6"></i></div>
         <div class="abacima" onclick="abrir7();" id="aba7"><h3>Sinais e Sintomas 2</h3><i class="fa-solid fa-chevron-right" id="seta7"></i></div>
+        <div class="abacima" onclick="abrir8();" id="aba8"><h3>Decisão de Transporte</h3><i class="fa-solid fa-chevron-right" id="seta8"></i></div>
     </div>
     
     <div class="iframes">
@@ -81,6 +82,7 @@
         <iframe src="conducao.html" id="iframe5" width="100%" height="100%"></iframe>
         <iframe src="sinaisesintomas.html" id="iframe6" width="100%" height="100%"></iframe>
         <iframe src="sinaisesintomas2.html" id="iframe7" width="100%" height="100%"></iframe>
+        <iframe src="decisaotransporte.html" id="iframe8" width="100%" height="100%"></iframe>
     </div>
 </div>
 
@@ -103,6 +105,8 @@
     var aba6 = document.getElementById('aba6');
     var iframe7 = document.getElementById('iframe7');
     var aba7 = document.getElementById('aba7');
+    var iframe8 = document.getElementById('iframe8');
+    var aba8 = document.getElementById('aba8');
 
 
     function dados(){
@@ -120,6 +124,7 @@
        aba5.classList.remove('active');
        aba6.classList.remove('active');
        aba7.classList.remove('active');
+       aba8.classList.remove('active');
        aba4.classList.remove('active');
        iframe1.style.display = 'block';
        iframe2.style.display = 'none';
@@ -128,6 +133,7 @@
        iframe5.style.display = 'none';
        iframe6.style.display = 'none';
        iframe7.style.display = 'none';
+       iframe8.style.display = 'none';
     }
 
     function abrir2(){
@@ -138,6 +144,7 @@
        aba4.classList.remove('active');
        aba6.classList.remove('active');
        aba7.classList.remove('active');
+       aba8.classList.remove('active');
        iframe2.style.display = 'block';
        iframe1.style.display = 'none';
        iframe3.style.display = 'none';
@@ -145,6 +152,7 @@
        iframe4.style.display = 'none';
        iframe6.style.display = 'none';
        iframe7.style.display = 'none';
+       iframe8.style.display = 'none';
     }
 
     function abrir3(){
@@ -155,6 +163,7 @@
        aba4.classList.remove('active');
        aba6.classList.remove('active');
        aba7.classList.remove('active');
+       aba8.classList.remove('remove');
        iframe3.style.display = 'block';
        iframe1.style.display = 'none';
        iframe2.style.display = 'none';
@@ -162,6 +171,7 @@
        iframe4.style.display = 'none';
        iframe6.style.display = 'none';
        iframe7.style.display = 'none';
+       iframe8.style.display = 'none';
     }
 
     function abrir4(){
@@ -172,6 +182,7 @@
        aba5.classList.remove('active');
        aba6.classList.remove('active');
        aba7.classList.remove('active');
+       aba8.classList.remove('active');
        iframe4.style.display = 'block';
        iframe1.style.display = 'none';
        iframe2.style.display = 'none';
@@ -179,6 +190,7 @@
        iframe5.style.display = 'none';
        iframe6.style.display = 'none';
        iframe7.style.display = 'none';
+       iframe8.style.display = 'none';
     }
 
     function abrir5(){
@@ -189,6 +201,7 @@
        aba4.classList.remove('active');
        aba6.classList.remove('active');
        aba7.classList.remove('active');
+       aba8.classList.remove('active');
        iframe5.style.display = 'block';
        iframe1.style.display = 'none';
        iframe2.style.display = 'none';
@@ -196,6 +209,7 @@
        iframe4.style.display = 'none';
        iframe6.style.display = 'none';
        iframe7.style.display = 'none';
+       iframe8.style.display = 'none';
     }
 
     function abrir6(){
@@ -206,6 +220,7 @@
        aba3.classList.remove('active');
        aba4.classList.remove('active');
        aba7.classList.remove('active');
+       aba8.classList.remove('active');
        iframe6.style.display = 'block';
        iframe5.style.display = 'none';
        iframe1.style.display = 'none';
@@ -213,6 +228,7 @@
        iframe3.style.display = 'none';
        iframe4.style.display = 'none';
        iframe7.style.display = 'none';
+       iframe8.style.display = 'none';
     }
 
     function abrir7(){
@@ -223,6 +239,7 @@
        aba2.classList.remove('active');
        aba3.classList.remove('active');
        aba4.classList.remove('active');
+       aba8.classList.remove('active');
        iframe7.style.display = 'block';
        iframe6.style.display = 'none';
        iframe5.style.display = 'none';
@@ -230,7 +247,26 @@
        iframe2.style.display = 'none';
        iframe3.style.display = 'none';
        iframe4.style.display = 'none';
+       iframe8.style.display = 'none';
+    }
 
+    function abrir8(){
+       aba8.classList.add('active');
+       aba6.classList.remove('active');
+       aba5.classList.remove('active');
+       aba1.classList.remove('active');
+       aba2.classList.remove('active');
+       aba3.classList.remove('active');
+       aba4.classList.remove('active');
+       aba7.classList.remove('active');
+       iframe8.style.display = 'block';
+       iframe6.style.display = 'none';
+       iframe5.style.display = 'none';
+       iframe1.style.display = 'none';
+       iframe2.style.display = 'none';
+       iframe3.style.display = 'none';
+       iframe4.style.display = 'none';
+       iframe7.style.display = 'none';
     }
 </script>
 </html>
