@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image/logo_noar.png">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="https://kit.fontawesome.com/a265de8dac.js" crossorigin="anonymous"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="formulario">
+        <form class="login_form" method="post" action="cadastro.php">
+            <div class="form_header">
+                <h1>Cadastro</h1>
+                <img src="image/logo_noar.png" width="90px">
+            </div>
+
+            <div class="inputs">
+                <div class="input_box">
+                    <label for="name">
+                        Nome
+                        <div class="input_field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="varchar" id="name" name="nome">
+                        </div>
+                    </label>
+                </div>
+
+                <div class="input_box">
+                    <label for="email">
+                        Email
+                        <div class="input_field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </label>
+                </div>
+
+                <div class="input_box">
+                    <label for="telefone">
+                        Telefone
+                        <div class="input_field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="varchar" id="telefone" name="telefone">
+                        </div>
+                    </label>
+                </div>
+
+                <div class="input_box">
+                    <label for="senha">
+                        Senha
+                        <div class="input_field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="senha" name="senha">
+                        </div>
+                    </label>
+                </div>
+
+            </div>
+
+            <a href="dados.html"><input type="submit" value="Cadastar-se" class="login_button" name="enviar"></a>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>
