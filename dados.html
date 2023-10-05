@@ -13,68 +13,68 @@
 </head>
 
 <body>
-    <div class="formulario">
-        <h3>Insira os Dados do Paciente</h3>
-        <fieldset>
-    <form method="post" action="">
-      <div class="forms">
-        <div class="data">Data:<input type="date" id="date"></div>
-        <div class="genero">
-          Sexo:
-          <select name="sexo" id="sexo">
-            <option value="-----">-----</option>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-          </select>
-        </div>
-        <div class="hospital">
-          Nome do Hospital: <input type="text" id="local">
-        </div>
-        <div class="nome">
-          Nome do Paciente: <input type="text" id="nome">
-        </div>
-        <div class="idade">
-          Idade: <input type="text" id="idade">
-        </div>
-        <div class="identidade">
-          RG/CPF Paciente: <input type="text" id="identidade">
-        </div>
+  <div class="formulario">
+    <h3>Insira os Dados do Paciente</h3>
+    <fieldset>
+      <form method="post" action="dados.php">
+        <div class="forms">
+          <div class="arrumar2">
+            <div class="data">Data:<input type="date" id="date" name="data"></div>
+            <div class="genero">
+              Sexo:
+              <select name="sexo" id="sexo">
+                <option value="-----">-----</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+              </select>
+            </div>
+            <div class="hospital">
+              Nome do Hospital: <input type="varchar" id="local" name="hospital">
+            </div>
+            <div class="nome">
+              Nome do Paciente: <input type="varchar" id="nome" name="nome">
+            </div>
+            <div class="idade">
+              Idade: <input type="int" id="idade" name="idade">
+            </div>
+            <div class="identidade">
+              RG/CPF Paciente: <input type="varchar" id="identidade" name="rg">
+            </div>
 
-        <div class="telefone">
-            Telefone: <br>
-            <input id="phone" type="tel" name="phone" />
-          <div class="alert alert-info" style="display: none;"></div>
-        </div>
-        <div class="local_ocorrencia">
-          Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
-        </div>
-        Acompanhante? <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()">
-        <div class="separa_btn">
-          <input type="submit" value="Enviar" class="btn">
-          <input type="reset" value="Limpar" class="btn">
-        </div>
-      </div>
-    </form>
+            <div class="telefone">
+              Telefone: <br>
+              <input id="phone" type="varchar" name="phone" />
+              <div class="alert alert-info" style="display: none;"></div>
+            </div>
+            <div class="local_ocorrencia">
+              Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
+            </div>
+          </div>
+          <div class="arrumar">
+            Acompanhante? <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()" name="acompanhante">
+          </div>
+          <div class="separa_btn">
+            <input type="submit" value="Enviar" class="btn" name="Enviar">
+            <input type="reset" value="Limpar" class="btn">
+          </div>
 
-<form method="post" action="" id="acompanhant" style="display: none;">
-    <div class="acompanhante ">
-        Acompanhante:
-        <input type="text" id="acompanhante2">
-        <br>
-      </div>
+          <div class="box" id="acompanhant" style="display: none;">
+            <div class="acompanhante ">
+              Acompanhante:
+              <input type="varchar" id="acompanhante2" name="nome_acompanhante">
+              <br>
+            </div>
 
-      <div class="idade2" id="div_idade">
-        Idade:
-        <input type="text" id="idade3">
+            <div class="idade2" id="div_idade">
+              Idade:
+              <input type="int" id="idade3" name="idade_acompanhante">
 
-      </div>
-      <div class="separa_btn">
-        <input type="submit" value="Enviar" class="btn">
-        <input type="reset" value="Limpar" class="btn">
-      </div>
-</form>
-</fieldset>
-</div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </fieldset>
+  </div>
 </body>
 
 <script>
@@ -123,7 +123,7 @@
 
     if (checkbox.checked) {
       acompanhant.style.display = "block";
-     
+
     } else {
       acompanhant.style.display = "none";
     }
