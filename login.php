@@ -1,18 +1,4 @@
-<?php
 
-if(isset($_GET["login"])){
-  $login = $_GET["login"];
-  if($login == 0){
-    echo("<script>
-    function alerta()
-    {
-      alert('Email ou Senha incorretos')
-    }
-    </script>");
-  }
-}
-
-?>  
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,9 +13,10 @@ if(isset($_GET["login"])){
     <title>Login</title>
 </head>
 
-<body>
+<body onload()>
+
     <div class="formulario">
-        <form class="login_form" method="post" action="login.php">
+        <form class="login_form" method="post" action="principal.php">
             <div class="form_header">
                 <h1>Login</h1>
                 <img src="image/logo_noar.png" width="90px">
@@ -57,11 +44,21 @@ if(isset($_GET["login"])){
 
             
 
-            <a href="dados.html"><input type="submit" value="Login" class="login_button"></a>
+            <input type="submit" value="Login" class="login_button" name="login">
 
         </form>
     </div>
+<?php
 
+if(isset($_GET["login"])){
+  $login = $_GET["login"];
+  if($login == 0){
+    echo("<script> alert('Email ou Senha incorretos')</script>");
+    
+  }
+}
+
+?>  
 
 </body>
 
