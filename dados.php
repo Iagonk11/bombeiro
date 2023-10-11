@@ -15,13 +15,13 @@
 
     if(Isset($_POST["acompanhante"])) {
         $acompanhante = 1;
-        $comando = $pdo->prepare("INSERT INTO ocorrencia('data',sexo,nome_hospital,nome_paciente,registro_paciente,idade_paciente,telefone_paciente,local_paciente,nome_acompanhante,idade_acompanhante) VALUES('$data','$sexo','$hospital','$nome','$idade','$rg','$phone','$local_ocorrencia','$nome_acompanhante','$idade_acompanhante')");
+        $comando = $pdo->prepare("INSERT INTO ocorrencia(data_ocorrencia,sexo,nome_hospital,nome_paciente,registro_paciente,idade_paciente,telefone_paciente,local_ocorrencia,nome_acompanhante,idade_acompanhante) VALUES('$data','$sexo','$hospital','$nome','$rg','$idade','$phone','$local_ocorrencia','$nome_acompanhante','$idade_acompanhante')");
     }
   
     else
     { 
         $acompanhante = 0;
-        $comando = $pdo->prepare("INSERT INTO ocorrencia('data',sexo,nome_hospital,nome_paciente,registro_paciente,idade_paciente,telefone_paciente,local_paciente,nome_acompanhante,idade_acompanhante) VALUES('$data','$sexo','$hospital','$nome','$idade','$rg','$phone','$local_ocorrencia')");
+        $comando = $pdo->prepare("INSERT INTO ocorrencia(data_ocorrencia,sexo,nome_hospital,nome_paciente,registro_paciente,idade_paciente,telefone_paciente,local_ocorrencia,nome_acompanhante,idade_acompanhante) VALUES('$data','$sexo','$hospital','$nome','$rg','$idade','$phone','$local_ocorrencia',NULL, NULL)");
     }
 
     $resultado = $comando->execute();

@@ -14,7 +14,7 @@
 
 <body>
   <div class="formulario">
-    <h3>Insira os Dados do Paciente</h3>
+    <h3>Insira os Dados da Ocorrência</h3>
     <fieldset>
       <form method="post" action="dados.php">
         <div class="forms">
@@ -47,12 +47,13 @@
               <div class="alert alert-info" style="display: none;"></div>
             </div>
             <div class="local_ocorrencia">
-              Local da ocorrência: <input type="text" name="local_ocorrencia" id="local_ocorrencia">
+              Local da ocorrência: <input type="varchar" name="local_ocorrencia" id="local_ocorrencia">
             </div>
           </div>
           <div class="arrumar">
             Acompanhante? <input type="checkbox" id="acompanhante" onchange="mostrarTextbox()" name="acompanhante">
           </div>
+
           <div class="separa_btn">
             <input type="submit" value="Enviar" class="btn" name="Enviar">
             <input type="reset" value="Limpar" class="btn">
@@ -68,7 +69,6 @@
             <div class="idade2" id="div_idade">
               Idade:
               <input type="int" id="idade3" name="idade_acompanhante">
-
             </div>
           </div>
         </div>
