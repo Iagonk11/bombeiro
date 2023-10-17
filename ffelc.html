@@ -8,8 +8,79 @@
     <link rel="icon" type="image/png" href="image/logo_noar.png">
 </head>
 <body>
-    <form action="" method="post">
-        
+    <h2>Ferimentos/Fraturas/Entorses/Luxação/Contusão</h2>
+    <form action="" method="post" id="formulario">
+        <table id="tabela">
+            <tr>
+                <td><label for="local">Local:</label></td>
+                <td><input type="text" name="local" id="local" placeholder="Local"></td>
+                <td><input type="text" name="linha1" id="linha1"></td>
+                <td><input type="text" name="linha2" id="linha2"></td>
+                <td><input type="text" name="linha3" id="linha3"></td>
+                <td><input type="text" name="linha4" id="linha4"></td>
+                <td><input type="text" name="linha5" id="linha5"></td>
+
+            </tr>
+            <tr>
+                <td><label for="lado">Lado:</label></td>
+                <td><input type="text" name="lado" id="lado" placeholder="Lado"></td>
+                <td><input type="text" name="linha_1" id="linha_1"></td>
+                <td><input type="text" name="linha_2" id="linha_2"></td>
+                <td><input type="text" name="linha_3" id="linha_3"></td>
+                <td><input type="text" name="linha_4" id="linha_4"></td>
+                <td><input type="text" name="linha_5" id="linha_5"></td>
+
+            </tr>
+            <tr>
+                <td><label for="face">Face:</label></td>
+                <td><input type="text" name="face" id="face" placeholder="Face"></td>
+                <td><input type="text" name="linhaum" id="linhaum"></td>
+                <td><input type="text" name="linhadois" id="linhadois"></td>
+                <td><input type="text" name="linhatres" id="linhatres"></td>
+                <td><input type="text" name="linhaquatro" id="linhaquatro"></td>
+                <td><input type="text" name="linhacinco" id="linhacinco"></td>
+
+            </tr>
+            <tr>
+                <td><label for="tipo">Tipo:</label></td>
+                <td><input type="text" name="tipo" id="tipo" placeholder="Tipo"></td>
+                <td><input type="text" name="linha_um" id="linha_um"></td>
+                <td><input type="text" name="linha_dois" id="linha_dois"></td>
+                <td><input type="text" name="linha_tres" id="linha_tres"></td>
+                <td><input type="text" name="linha_quatro" id="linha_quatro"></td>
+                <td><input type="text" name="linha_cinco" id="linha_cinco"></td>
+
+            </tr>
+        </table>
+        <input type="submit" value="Enviar">
+        <button onclick="criarlinha()">+</button>
     </form>
 </body>
+<script>
+function criarlinha() {
+    var table = document.getElementById("tabela");
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+    var cell8 = row.insertCell(7);
+    var cell9 = row.insertCell(8);
+    var cell10 = row.insertCell(9);
+    var cell11 = row.insertCell(10);
+    cell1.innerHTML = "<input type='text' name='linha_um' id='linha_um'>";
+    cell2.innerHTML = "<input type='text' name='linha_dois' id='linha_dois'>";
+    cell3.innerHTML = "<input type='text' name='linha_tres' id='linha_tres'>";
+    cell4.innerHTML = "<input type='text' name='linha_quatro' id='linha_quatro'>";
+    cell5.innerHTML = "<input type='text' name='linha_cinco' id='linha_cinco'>";
+    cell6.innerHTML = "<input type='text' name='linha_seis' id='linha_seis'>";
+    cell7.innerHTML = "<input type='text' name='linha_sete' id='linha_sete'>";
+    cell8.innerHTML = "<input type='text' name='linha_oito' id='linha_oito'>";
+    cell9.innerHTML = "<input type='text' name='linha_nove' id='linha_nove'>";
+    cell10.innerHTML = "<input type='text' name='linha_dez' id='linha_dez'>";
+  }
+</script>
 </html>
