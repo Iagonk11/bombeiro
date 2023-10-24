@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferimentos/Fraturas/Entorses/Luxação/Contusão</title>
     <link rel="icon" type="image/png" href="image/logo_noar.png">
+    <link rel="stylesheet" href="css/ffelc.css">
+    <title>Ferimentos/Fraturas/Entorses/Luxação/Contusão</title>
+
 </head>
 <body>
     <h2>Ferimentos/Fraturas/Entorses/Luxação/Contusão</h2>
@@ -19,6 +21,11 @@
                 <td><input type="text" name="linha3" id="linha3"></td>
                 <td><input type="text" name="linha4" id="linha4"></td>
                 <td><input type="text" name="linha5" id="linha5"></td>
+                <td><input type="text" name="linha6" id="linha6"></td>
+                <td><input type="text" name="linha7" id="linha7"></td>
+                <td><input type="text" name="linha8" id="linha8"></td>
+                <td><input type="text" name="linha9" id="linha9"></td>
+                <td><input type="text" name="linha10" id="linha10"></td>
 
             </tr>
             <tr>
@@ -29,6 +36,12 @@
                 <td><input type="text" name="linha_3" id="linha_3"></td>
                 <td><input type="text" name="linha_4" id="linha_4"></td>
                 <td><input type="text" name="linha_5" id="linha_5"></td>
+                <td><input type="text" name="linha_6" id="linha_6"></td>
+                <td><input type="text" name="linha_7" id="linha_7"></td>
+                <td><input type="text" name="linha_8" id="linha_8"></td>
+                <td><input type="text" name="linha_9" id="linha_9"></td>
+                <td><input type="text" name="linha_10" id="linha_10"></td>
+
 
             </tr>
             <tr>
@@ -39,6 +52,11 @@
                 <td><input type="text" name="linhatres" id="linhatres"></td>
                 <td><input type="text" name="linhaquatro" id="linhaquatro"></td>
                 <td><input type="text" name="linhacinco" id="linhacinco"></td>
+                <td><input type="text" name="linhaseis" id="linhaseis"></td>
+                <td><input type="text" name="linhasete" id="linhasete"></td>
+                <td><input type="text" name="linhahoito" id="linhahoito"></td>
+                <td><input type="text" name="linhanove" id="linhanove"></td>
+                <td><input type="text" name="linhadez" id="linhadez"></td>
 
             </tr>
             <tr>
@@ -49,38 +67,15 @@
                 <td><input type="text" name="linha_tres" id="linha_tres"></td>
                 <td><input type="text" name="linha_quatro" id="linha_quatro"></td>
                 <td><input type="text" name="linha_cinco" id="linha_cinco"></td>
+                <td><input type="text" name="linha_seis" id="linha_seis"></td>
+                <td><input type="text" name="linha_sete" id="linha_sete"></td>
+                <td><input type="text" name="linha_oito" id="linha_oito"></td>
+                <td><input type="text" name="linha_nove" id="linha_nove"></td>
+                <td><input type="text" name="linha_dez" id="linha_dez"></td>
 
             </tr>
         </table>
-        <input type="submit" value="Enviar">
-        <button onclick="criarlinha()">+</button>
+        <input type="submit" value="Enviar" class="btn">
     </form>
 </body>
-<script>
-function criarlinha() {
-    var table = document.getElementById("tabela");
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    var cell6 = row.insertCell(5);
-    var cell7 = row.insertCell(6);
-    var cell8 = row.insertCell(7);
-    var cell9 = row.insertCell(8);
-    var cell10 = row.insertCell(9);
-    var cell11 = row.insertCell(10);
-    cell1.innerHTML = "<input type='text' name='linha_um' id='linha_um'>";
-    cell2.innerHTML = "<input type='text' name='linha_dois' id='linha_dois'>";
-    cell3.innerHTML = "<input type='text' name='linha_tres' id='linha_tres'>";
-    cell4.innerHTML = "<input type='text' name='linha_quatro' id='linha_quatro'>";
-    cell5.innerHTML = "<input type='text' name='linha_cinco' id='linha_cinco'>";
-    cell6.innerHTML = "<input type='text' name='linha_seis' id='linha_seis'>";
-    cell7.innerHTML = "<input type='text' name='linha_sete' id='linha_sete'>";
-    cell8.innerHTML = "<input type='text' name='linha_oito' id='linha_oito'>";
-    cell9.innerHTML = "<input type='text' name='linha_nove' id='linha_nove'>";
-    cell10.innerHTML = "<input type='text' name='linha_dez' id='linha_dez'>";
-  }
-</script>
 </html>
