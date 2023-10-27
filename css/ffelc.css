@@ -11,9 +11,10 @@ body{
     flex-direction: column;
 }
 
-input  [type="text"] {
-    width: 50px;
+input {
+    width: 122px;
     font-size: 23px;
+    border-width: 3px;
 }
 
 label{
@@ -21,6 +22,26 @@ label{
     font-weight: bold;
 }
 
-input [type="submit"]{
-    background-color: #4CAF50; /* Green */
-}
+    .btn{
+        border-radius: 20px;
+        width: 90px;
+        height: 40px;
+        color: white;
+        background-color: rgb(164, 19, 19);
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        margin: 3%;
+        font-size: 16px
+    }
+
+    .separa_btn{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btn:hover {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+    }
