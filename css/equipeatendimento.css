@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    
+}
+
+.formulaio{
+    background-color: rgb(181, 181, 181);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 10px;
+    height: 450px;
+    width: 300px;
+
+}
+
+h3{
+    color: rgb(171, 17, 17);
+    font-weight: bold;
+}
+
+label{
+    font-weight: bold;
+}
+
+input{
+    border: none;
+    width: 250px;
+    font-size: 16px;
+    padding: 0px 5px;
+    border-radius: 7px;
+    width: 300px;
+}
+
+
+.btn{
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    color: white;
+    background-color: rgb(164, 19, 19);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin: 3%;
+    font-size: 16px
+}
+
+.separa_btn{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
