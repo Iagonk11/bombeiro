@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body{
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+.agrupamento input[type="checkbox"] {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 10;
+    left: 10;
+    height: 21.5px;
+    width: 21.5px;
+    background-color: rgb(190, 189, 189);
+    cursor: pointer;
+}
+
+.agrupamento:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.agrupamento input:checked~.checkmark {
+    background-image: url("../image/X.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+}
+
+.agrupamento:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.agrupamento input:checked~.checkmark:after {
+    display: block;
+}
+
+.agrupamento .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.d1{
+    display: flex;
+    justify-content: space-between;
+}
