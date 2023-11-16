@@ -5,6 +5,24 @@ body{
     padding: 40px;
     display: flex;
     font-family: 'Poppins', sans-serif;
+    justify-content: center;
+}
+
+label{
+    display: flex;
+}
+
+.formulario{
+    background-color: rgb(252, 141, 141);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 10px;
+    height: fit-content;
+    width: fit-content;
+    
+    
 }
 
 .agrupamento input[type="checkbox"] {
@@ -15,9 +33,9 @@ body{
 }
 
 .checkmark {
-    position: absolute;
+    
     top: 10;
-    left: 10;
+    left: 10;   
     height: 21.5px;
     width: 21.5px;
     background-color: rgb(190, 189, 189);
@@ -37,7 +55,7 @@ body{
 
 .agrupamento:after {
     content: "";
-    position: absolute;
+   
     display: none;
 }
 
@@ -57,7 +75,33 @@ body{
     transform: rotate(45deg);
 }
 
-.d1{
+textarea {
+     border-radius: 6px;
+     border: none;
+     height: 80px;
+     width: 200px;
+}
+
+.btn{
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    color: white;
+    background-color: rgb(164, 19, 19);
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin: 3%;
+    font-size: 16px
+}
+
+.separa_btn{
+    width: 80%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+}
+
+.btn:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
 }
