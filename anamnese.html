@@ -12,10 +12,13 @@
     <form method="post" class="formulario">
         <h2>Anamnese da Emergência Médica</h2>
         <label for="oque">O que aconteceu (Sinais e Sintomas)</label>
-        <input type="text" name="oque" id="oque">
+        <textarea type="text" name="oque" id="oque">
+
+        </textarea> 
         
         <div class="d1">
              <label for="aconteceu">Aconteceu outras vezes?</label>
+             <br>
                 <label for="opcao2" class="agrupamento">
                     <input type="checkbox" id="opcao2" name="opcao2" value="Opção 2">
                     <span class="checkmark"></span>
@@ -23,10 +26,13 @@
                 </label>
 
                 <label for="tempo">A quanto tempo isso aconteceu</label>
-        <input type="text" name="tempo" id="tempo">
+       <textarea input type="text" name="tempo" id="tempo"  > 
+      </textarea>
 
         <label for="saude">Possui algum problema de saúde?</label>
+        <br>
                 <label for="opcao3" class="agrupamento">
+                    <br>
                 <input type="checkbox" id="opcao3" name="opcao3" value="Opção 2">
                 <span class="checkmark"></span>
             </label>
@@ -34,7 +40,12 @@
 
         </div>
 
-        
+        <div class="separa_btn">
+            <input type="submit" value="Enviar" class="btn">
+            <input type="reset" value="Limpar" class="btn">
+        </div>
+
+
     </form>
 </body>
 </html>
