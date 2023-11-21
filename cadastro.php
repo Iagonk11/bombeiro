@@ -6,7 +6,7 @@
         $senha=  $_POST["senha"];
         
 
-        $comando = $pdo->prepare(" INSERT INTO cadastro (nome, email, telefone, senha) VALUES ('$nome', '$email', '$telefone', '$senha') ");
+        $comando = $pdo->prepare(" INSERT INTO cadastro (nomebombeiro, emailbombeiro, telefonebombeiro, senhabombeiro) VALUES ('$nome', '$email', '$telefone', '$senha') ");
         
         $resultado = $comando->execute();
 

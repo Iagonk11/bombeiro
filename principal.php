@@ -6,7 +6,7 @@ include('conecta.php');
         $senha = $_POST['senha'];
 
 include('conecta.php');
-    $comando = $pdo->prepare("SELECT * from cadastro WHERE email='$email' and senha='$senha'" );
+    $comando = $pdo->prepare("SELECT * from cadastro WHERE emailbombeiro='$email' and senhabombeiro='$senha'" );
     $resultado = $comando->execute();
     $n = 0;
     while ($linhas = $comando->fetch())
