@@ -26,7 +26,7 @@ $opcao24= $_POST["opcao24"];
 
 $comando = $pdo->prepare("INSERT INTO sinais_sintomas (abdomen_sensivel_rigido,afundamento_cranio,agitacao,amnesia,angina_de_peito,apineia,bradicardia,enfizema_subcotaneo,bradipneia,cefaleia,convulsao,decorticacao,deformidade,estatese_de_jugular,desmaio,desvio_de_traqueia,dispneia_menor2m,dor_local,face_palida,bronco_aspirando,descerebracao,cianose,edema) VALUES ('$opcao1', '$opcao2', '$opcao3', '$opcao4', '$opcao5', '$opcao6', '$opcao7', '$opcao8', '$opcao9', '$opcao10', '$opcao12', '$opcao13', '$opcao14', '$opcao15', '$opcao16', '$opcao17', '$opcao18', '$opcao19', '$opcao20', '$opcao21', '$opcao22', '$opcao23', '$opcao24')");
 $resultado = $comando->execute();
-header("Location: ");
+header("Location: sucesso.html");
 
 
 

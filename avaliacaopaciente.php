@@ -24,7 +24,7 @@ $outro= $_POST["outro"];
 
 $comando = $pdo->prepare("INSERT INTO avaliacaopaciente (causadoanimais,meiodetransporte,desmoronamento,emergencia,queda_altura2m,tentativasuicidio,queda_propria_altura,afogamento,agressao,atropelamento,choque_eletrico,desabamento,domestico,esportivo,intoxicacao,queda_bicicleta,queda_moto,queda_menor_2m,trabalho,transferencia,outro) VALUES ('$opcao1', '$opcao2', '$opcao3', '$opcao4', '$opcao5', '$opcao6', '$opcao7', '$opcao8', '$opcao9', '$opcao10', '$opcao11', '$opcao12', '$opcao13', '$opcao14', '$opcao15', '$opcao16', '$opcao17', '$opcao18', '$opcao19', '$opcao20', '$outro')");
 $resultado = $comando->execute();
-header("Location: ");
+header("Location: sucesso.html");
 
 
 

@@ -16,7 +16,7 @@
 <body onload()>
 
     <div class="formulario">
-        <form class="login_form" method="post" action="dados.html">
+        <form class="login_form" method="post" action="dados.php">
             <div class="form_header">
                 <h1>Login</h1>
                 <img src="image/logo_noar.png" width="90px">

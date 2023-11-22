@@ -33,6 +33,6 @@ canulaguedel, desobstrucaova, empregodea, gerenciamentoriscos, limpezaferimento,
     '$opcao23', '$opcao24')");
 
 $resultado = $comando->execute();
-header("Location: ");
+header("Location: sucesso.html");
 
 ?>

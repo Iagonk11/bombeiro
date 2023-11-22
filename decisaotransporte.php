@@ -7,7 +7,7 @@ $opcao4=isset($_POST["opcao4"]) ? "1" : "0";
 
 $comando = $pdo->prepare("INSERT INTO transporte (critico,potencialmente_instavel,instavel,estavel) VALUES ('$opcao1', '$opcao2', '$opcao3','$opcao4')");
 $resultado = $comando->execute();
-header("Location: ");
+header("Location: sucesso.html");
 
 
 

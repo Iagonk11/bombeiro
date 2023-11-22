@@ -9,6 +9,6 @@ $op6 = $_POST["op6"];
 
 $comando = $pdo->prepare("INSERT INTO problemas (respiratorio, obstetrico, diabetes, transporte, psiquiatrico, outros) VALUES ('$op1', '$op2','$op3', '$op4', '$op5', '$op6')" );
 $resultado = $comando->execute();
-header("Location:  ");
+header("Location:  sucesso.html");
 
 ?>
