@@ -6,7 +6,7 @@ include('conecta.php');
         $senha = $_POST['senha'];
 
 include('conecta.php');
-    $comando = $pdo->prepare("SELECT * from cadastro WHERE emailbombeiro='$email' and senhabombeiro='$senha'" );
+    $comando = $pdo->prepare("SELECT * from cadastro WHERE email='$email' and senha='$senha'" );
     $resultado = $comando->execute();
     $n = 0;
     while ($linhas = $comando->fetch())
@@ -214,7 +214,7 @@ include('conecta.php');
        aba4.classList.remove('active');
        aba6.classList.remove('active');
        aba7.classList.remove('active');
-       aba8.classList.remove('active');
+       aba8.classList.remove('remove');
        aba9.classList.remove('active');
        aba10.classList.remove('active');
        aba11.classList.remove('active');
@@ -229,7 +229,6 @@ include('conecta.php');
        iframe9.style.display = 'none';
        iframe10.style.display = 'none';
        iframe11.style.display = 'none';
-       
     }
 
     function abrir4(){
@@ -316,7 +315,7 @@ include('conecta.php');
        aba3.classList.remove('active');
        aba4.classList.remove('active');
        aba8.classList.remove('active');
-       aba9.calssList.remove('active')
+       aba9.classList.remove('active');
        aba10.classList.remove('active');
        aba11.classList.remove('active');
        iframe7.style.display = 'block';
@@ -341,7 +340,7 @@ include('conecta.php');
        aba3.classList.remove('active');
        aba4.classList.remove('active');
        aba7.classList.remove('active');
-       aba9.calssList.remove('active')
+       aba9.classList.remove('active');
        aba10.classList.remove('active');
        aba11.classList.remove('active');
        iframe8.style.display = 'block';
