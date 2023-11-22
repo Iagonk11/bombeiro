@@ -213,3 +213,9 @@ label{
     margin-top: 5%;
     
 }
+
+.imagem{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+}
