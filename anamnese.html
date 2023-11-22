@@ -9,11 +9,10 @@
     <title>Anamnese da Emergência Médica</title>
 </head>
 <body>
-    <form method="post" class="formulario">
+    <form method="post" class="formulario" action="anamnese.php">
         <h2>Anamnese da Emergência Médica</h2>
         <label for="oque">O que aconteceu (Sinais e Sintomas)</label>
-        <textarea type="text" name="oque" id="oque">
-
+        <textarea type="varchar" name="opcao1" id="oque">
         </textarea> 
         
         <div class="d1">
@@ -26,14 +25,14 @@
                 </label>
 
                 <label for="tempo">A quanto tempo isso aconteceu</label>
-       <textarea input type="text" name="tempo" id="tempo"  > 
+       <textarea input type="varchar" name="opcao3" id="tempo"  > 
       </textarea>
 
         <label for="saude">Possui algum problema de saúde?</label>
         <br>
-                <label for="opcao3" class="agrupamento">
+                <label for="opcao4" class="agrupamento">
                     <br>
-                <input type="checkbox" id="opcao3" name="opcao3" value="Opção 2">
+                <input type="checkbox" id="opcao4" name="opcao4" value="Opção 3">
                 <span class="checkmark"></span>
             </label>
 
