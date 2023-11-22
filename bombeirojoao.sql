@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/11/2023 às 19:28
+-- Tempo de geração: 22-Nov-2023 às 13:59
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacaopaciente`
+-- Estrutura da tabela `avaliacaopaciente`
 --
 
 CREATE TABLE `avaliacaopaciente` (
@@ -49,20 +49,14 @@ CREATE TABLE `avaliacaopaciente` (
   `queda_menor_2m` int(11) NOT NULL,
   `trabalho` int(11) NOT NULL,
   `transferencia` int(11) NOT NULL,
-  `outro` varchar(255) NOT NULL
+  `outro` varchar(255) NOT NULL,
+  `id_ocorrencia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Despejando dados para a tabela `avaliacaopaciente`
---
-
-INSERT INTO `avaliacaopaciente` (`idavaliacao`, `causadoanimais`, `meiodetransporte`, `desmoronamento`, `emergencia`, `queda_altura2m`, `tentativasuicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menor_2m`, `trabalho`, `transferencia`, `outro`) VALUES
-(1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastro`
+-- Estrutura da tabela `cadastro`
 --
 
 CREATE TABLE `cadastro` (
@@ -73,18 +67,10 @@ CREATE TABLE `cadastro` (
   `senhabombeiro` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Despejando dados para a tabela `cadastro`
---
-
-INSERT INTO `cadastro` (`idbombeiro`, `nomebombeiro`, `emailbombeiro`, `telefonebombeiro`, `senhabombeiro`) VALUES
-(1, '', '', '', ''),
-(2, 'Josevaldo Roberto da Silva', 'josevaldo@bombeiro.com', '47988152558', '12345');
-
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `conducao`
+-- Estrutura da tabela `conducao`
 --
 
 CREATE TABLE `conducao` (
@@ -95,7 +81,7 @@ CREATE TABLE `conducao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `conducao`
+-- Extraindo dados da tabela `conducao`
 --
 
 INSERT INTO `conducao` (`idconducao`, `deitada`, `semi_sentada`, `sentada`) VALUES
@@ -104,7 +90,7 @@ INSERT INTO `conducao` (`idconducao`, `deitada`, `semi_sentada`, `sentada`) VALU
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `ocorrencia`
+-- Estrutura da tabela `ocorrencia`
 --
 
 CREATE TABLE `ocorrencia` (
@@ -128,76 +114,43 @@ CREATE TABLE `ocorrencia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `ocorrencia`
---
-
-INSERT INTO `ocorrencia` (`id_ocorrencia`, `data_ocorrencia`, `sexo`, `nome_hospital`, `nome_paciente`, `registro_paciente`, `idade_paciente`, `telefone_paciente`, `local_ocorrencia`, `nome_acompanhante`, `idade_acompanhante`, `numero_usb`, `desp`, `h_ch`, `km_final`, `cod_ir`, `cod_ps`) VALUES
-(1, '2023-11-02', 'm', 'Dona Helena', 'Manuel Arduino da Ferreira', '8094023', 54, '47988152574', 'Av. Brasil', NULL, NULL, '', '', '', '', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `transporte`
---
-
-CREATE TABLE `transporte` (
-  `idtransporte` int(11) NOT NULL,
-  `critico` int(11) NOT NULL,
-  `potencialmente_instavel` int(11) NOT NULL,
-  `instavel` int(11) NOT NULL,
-  `estavel` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Despejando dados para a tabela `transporte`
---
-
-INSERT INTO `transporte` (`idtransporte`, `critico`, `potencialmente_instavel`, `instavel`, `estavel`) VALUES
-(1, 0, 0, 1, 0);
-
---
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `avaliacaopaciente`
+-- Índices para tabela `avaliacaopaciente`
 --
 ALTER TABLE `avaliacaopaciente`
-  ADD PRIMARY KEY (`idavaliacao`);
+  ADD PRIMARY KEY (`idavaliacao`),
+  ADD KEY `id_ocorrencia` (`id_ocorrencia`);
 
 --
--- Índices de tabela `cadastro`
+-- Índices para tabela `cadastro`
 --
 ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`idbombeiro`);
 
 --
--- Índices de tabela `conducao`
+-- Índices para tabela `conducao`
 --
 ALTER TABLE `conducao`
   ADD PRIMARY KEY (`idconducao`);
 
 --
--- Índices de tabela `ocorrencia`
+-- Índices para tabela `ocorrencia`
 --
 ALTER TABLE `ocorrencia`
   ADD PRIMARY KEY (`id_ocorrencia`);
 
 --
--- Índices de tabela `transporte`
---
-ALTER TABLE `transporte`
-  ADD PRIMARY KEY (`idtransporte`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `avaliacaopaciente`
 --
 ALTER TABLE `avaliacaopaciente`
-  MODIFY `idavaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idavaliacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `cadastro`
@@ -209,19 +162,23 @@ ALTER TABLE `cadastro`
 -- AUTO_INCREMENT de tabela `conducao`
 --
 ALTER TABLE `conducao`
-  MODIFY `idconducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idconducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `ocorrencia`
 --
 ALTER TABLE `ocorrencia`
-  MODIFY `id_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de tabela `transporte`
+-- Restrições para despejos de tabelas
 --
-ALTER TABLE `transporte`
-  MODIFY `idtransporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Limitadores para a tabela `avaliacaopaciente`
+--
+ALTER TABLE `avaliacaopaciente`
+  ADD CONSTRAINT `avaliacaopaciente_ibfk_1` FOREIGN KEY (`id_ocorrencia`) REFERENCES `ocorrencia` (`id_ocorrencia`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
