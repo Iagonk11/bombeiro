@@ -1,295 +1,200 @@
 <?php
-
-$select = isset($_GET["pesq"])?$_GET["pesq"]:"xxxxx";
-$numero = isset($_GET["numero"])?$_GET["numero"]:0;
-$paciente = isset($_GET["paciente"])?$_GET["paciente"]:"xxxxx";
-$local = isset($_GET["local"])?$_GET["local"]:"xxxxx";
-$hospital = isset($_GET["hospital"])?$_GET["hospital"]:"xxxxx";
-$data = isset($_GET["data"])?$_GET["data"]:"1900-02-02";
-
 include("conecta.php");
-if($select == "N° da ocorrência"){
-    $comando = $pdo->prepare("SELECT * FROM ocorrencia where id_ocorrencia='$numero'");
-}
-else if($select == "Nome"){
-    $comando = $pdo->prepare("SELECT * FROM ocorrencia where nome_paciente LIKE '%$paciente%'");
-}
-else if($select == "Local"){
-    $comando = $pdo->prepare("SELECT * FROM ocorrencia where `local_ocorrencia` LIKE '%$local%'");
-}
-else if($select == "Hospital"){
-    $comando = $pdo->prepare("SELECT * FROM ocorrencia where `nome_hospital` LIKE '%$hospital%'");
-}
-else if($select == "Data"){
-    $comando = $pdo->prepare("SELECT * FROM ocorrencia where `data_ocorrencia`='$data'");
+$nome = "";
+if( isset($_GET["nome_paciente"])){
+    $nome = $_GET["nome_paciente"];
+    $comando = $pdo->prepare("SELECT * FROM ocorrencia where nome_paciente='$nome'");
+}else{
+    $comando = $pdo->prepare("SELECT * FROM ocorrencia");
 }
 
-
-
-
-
-else{
-    $comando = $pdo->prepare("SELECT * FROM ocorrencia where id_ocorrencia=0");
-}
+    
 
 $resultado = $comando->execute();
 
-
-
-include('conecta.php');
-    if(isset($_POST['entrar'])){
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $cpf = $_POST['cpf'];
-
-include('conecta.php');
-    $comando = $pdo->prepare("SELECT * from voluntario WHERE email='$email' and senha='$senha' and cpf='$cpf'" );
-    $resultado = $comando->execute();
-    $n = 0;
-    while ($linhas = $comando->fetch())
-    {
-        $n = $n-1;
-    }
-    if($n == 0){
-        header("Location: login.php?login=0");
-    }
-    }
-    if(isset($_POST["cadastro"])){
-        header("Location: principal.php");}
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pesquisa</title>
+    <title>Listagem</title>
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
-        body {
+        body{
+            max-width: 100%;
             font-family: 'Poppins', sans-serif;
             display: flex;
             align-items: center;
             align-content: center;
+            justify-content: center;
+            justify-items: center;
             flex-direction: column;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            margin: 0 auto;
+            margin-left: 0px;
+            padding: 1px;
+            background-color: #f3f3f3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
 
         }
 
-        .pesquisas {
-            width: 80%;
+        fieldset input{
+            width: 18%;
         }
 
-        fieldset input {
-            width: 18%
+        .pesquisa input{
+            width: 50%;
         }
 
-        .pesquisa input {
-            width: 40%
+        .pesquisa{
+            background-color: white;
         }
 
-        .usuario {
+        .usuario{
             width: 100%;
-            background-color: #ffffff9d;
-            color: black;
-
+            display: flex;
+            flex-direction: column;
         }
 
-        .usuariot {
+        .usuariot{
             width: 100%;
             border-collapse: collapse;
             border: 1px solid black;
             text-align: center;
+            font-size:10px;
         }
 
-        thead {
-            background: linear-gradient(0deg, rgba(78, 4, 4, 1) 0%, rgba(218, 21, 21, 1) 100%);
+       
+
+        thead{
+            background-color: blue;
             color: #fff
         }
 
-        td img {
+        td img{
             margin-top: 5px;
             cursor: pointer
         }
 
-        .botaoen {
-            width: 10%;
-            height: 32px;
-            background-color: #c52020;
-            color: #fff;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            border: none;
-            border-radius: 5px;
-            transition: .4s;
-            margin-left: 50px;
-
-        }
-
-        .pesq 
-        {
-            width: 20%;
-            height: 36px;
-            font-size: 14px;
-            font-family: 'Poppins', sans-serif;
-            margin-left: 10px;
-            
-        }
-
-        .inpute{
-            display: none;
-            width: 60%;
-            height: 30px;
-            font-size: 14px;
-            font-family: 'Poppins', sans-serif;
-            margin-left: 10px;
-        }
-        #i1{
-            display: block
-        }
-
-        .pesquisa{
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        legend{
-            font-size: 20px;
-            color: #000;
-        }
-        
+    
     </style>
 
 </head>
-
 <body>
-
-    <div class="pesquisas">
-        <h2>Histórico de ocorrência - Bombeiros voluntários</h2>
-        <form action="pesquisa.php" method="get">
+    
+    <div class="paciente">
+        <h2>Informações Ocorrência</h2>
+        <form action="adm.php" method="get">
 
             <fieldset class="pesquisa">
-                <legend> Pesquisar paciente </legend>
-                Pesquisar por:
-                <select name="pesq" id="pesq" class="pesq" onclick="Input();">
-                    <option value="N° da ocorrência">N° da ocorrência</option>
-                    <option value="Nome">Nome do Paciente</option>
-                    <option value="Local">Local da Ocorrência</option>
-                    <option value="Hospital">Nome do Hospital</option>
-                    <option value="Data">Data da Ocorrência</option>
-                </select>
-                <input type="text" class="inpute" placeholder="Digite o N° da ocorrência" id="i1" name="numero">
-                <input type="text" class="inpute" placeholder="Digite o Nome do Paciente" id="i2" name="paciente">
-                <input type="text" class="inpute" placeholder="Digite o Local da Ocorrência" id="i3" name="local">
-                <input type="text" class="inpute" placeholder="Digite o nome do Hospital" id="i4" name="hospital">
-                <input type="date" class="inpute" placeholder="Digite a Data da Ocorrência" id="i5" name="data">
-                <input type="submit" class="botaoen" value="Pesquisar" style="width: 10%;" >
+                <legend> Pesquisar Paciente </legend>
+                
+                        <input type="text" name="nome" placeholder="nome">
+                        <input type="submit" class="botaoen" value="Pesquisar" style="width: 200px;">
+                 
+               </fieldset>
+            </form>
 
+            <br>
+
+            <fieldset>
+             <legend> Adicionar/Alterar Paciente </legend>
+             <form action="config_adm.php" method="post">
+                    <input type="text" id="data" name="data" placeholder="data">       
+                    <input type="text" id="sexo" name="sexo" placeholder="sexo" >
+                    <input type="text" id="hospital" name="hospital" placeholder="hospital">
+                    <input type="text" id="nome" name="nome" placeholder="nome">
+                    <input type="text" id="idade" name="idade" placeholder="idade">
+                    <input type="text" id="rg" name="rg" placeholder="rg">
+                    <input type="text" id="phone" name="phone" placeholder="phone">
+                    <input type="text" id="local_ocorrencia" name="local_ocorrencia" placeholder="local_ocorrencia">
+                    <input type="text" id="acompanhante" name="acompanhante" placeholder="acompanhante">
+                    <input type="text" id="nome_acompanhante" name="nome_acompanhante" placeholder="nome_acompanhante">
+                    <input type="text" id="idade_acompanhante" name="idade_acompanhante" placeholder="idade_acompanhante">
+              
             </fieldset>
-        </form>
+          
+            <div class="botoesen">
+            
+            <input type="submit" class="botaoen" name="alterar" value="Alterar">
+            <input type="submit" class="botaoen" name="inserir" value="Inserir">
+            <input type="reset" value="Limpar" class="botaoen">
+            <input type="submit" value="Excluir" name="excluir" class="botaoen">
+        </div>
+            </form>
 
-        <br>
-
-        <div class="usuario">
-            <table border="1" class="usuariot">
-                <thead>
-                    <th>N° da ocorrência</th>
-                    <th>Nome</th>
-                    <th>Local</th>
-                    <th>Hospital</th>
-                    <th>Data</th>
-                    <th>--</th>
-                </thead>
-
-               
-                <?php
+            <div class="usuario">
+                <table border="1" class="usuariot">
+                    <thead>
+                        <th>data</th>
+                        <th>sexo</th>
+                        <th>hospital</th>
+                        <th>nome</th>
+                        <th>idade</th>
+                        <th>rg</th>
+                        <th>phone</th>
+                        <th>local_ocorrencia</th>
+                        <th>acompanhante</th>
+                        <th>nome_acompanhante</th>
+                        <th>idade_acompanhante</th>
+                        <th>--</th>
+                    </thead>
+                    <?php
                         while ($linhas = $comando->fetch()){
-                            $id_paciente = $linhas["id_ocorrencia"];
-                            $nome = $linhas["nome_paciente"];
-                            $local = $linhas["local_ocorrencia"];
-                            $hospital = $linhas["nome_hospital"];
                             $data = $linhas["data_ocorrencia"];
-                            $temp = explode("-",$data);
-                            $data = $temp[2] . "/" . $temp[1] . "/" . $temp[0];
+                            $sexo = $linhas["sexo"];
+                            $hospital = $linhas["nome_hospital"];
+                            $nome = $linhas["nome_paciente"];
+                            $idade = $linhas["idade_paciente"];
+                            $rg= $linhas["registro_paciente"];
+                            $phone= $linhas["telefone_paciente"];
+                            $local_ocorrencia= $linhas["local_ocorrencia"];
+                            $nome_acompanhante= $linhas["nome_acompanhante"];
+                            $idade_acompanhante= $linhas["idade_acompanhante"];
+
                             echo("
                                 <tr>
-                                    <td>$id_ocorrência</td>
-                                    <td>$nome</td>
-                                    <td>$local</td>
-                                    <td>$hospital</td>
                                     <td>$data</td>
+                                    <td>$sexo</td>
+                                    <td>$hospital</td>
+                                    <td>$nome</td>
+                                    <td>$idade</td>
+                                    <td>$rg</td>
+                                    <td>$phone</td>
+                                    <td>$local_ocorrencia</td>
+                                    <td>$nome_acompanhante</td>
+                                    <td>$idade_acompanhante</td>
                                     <td>
-                                    <img src='./image/lupa.png' width='25px'>
+                                    <img src='image/lupa.png' width='25px' onclick=\"Editar('$data','$sexo','$hospital','$nome','$idade',
+                                    '$rg','$phone','$local_ocorrencia','$nome_acompanhante','$idade_acompanhante');\" >
                                     </td>
                                 </tr>
                             ");
                         }
                     ?>
-                 
-
-            </table>
-        </div>
+                </table>
+            </div>
     </div>
-    <script>
-        function Editar(txtnome, txtemail, txtsenha, txtcep) {
-            nome.value = txtnome;
-            email.value = txtemail;
-            senha.value = txtsenha;
-            cep.value = txtcep;
-        }
+<script>
+    function Editar(txtdata, txtsexo, txthospital, txtnome, txtidade, txtrg, txtphone, txtlocal_ocorrencia, txtacompanhante, txtnome_acompanhante, txtidade_acompanhante){
+        data.value = txtdata;
+        sexo.value = txtsexo;
+        hospital.value = txthospital;
+        nome.value = txtnome;
+        idade.value = txtidade;
+        rg.value = txtrg;   
+        phone.value = txtphone;
+        local_ocorrencia.value = txtlocal_ocorrencia;
+        acompanhante.value = txtacompanhante;
+        nome_acompanhante.value = txtnome_acompanhante;
+        idade_acompanhante.value = txtidade_acompanhante;
 
-        function Input(){
-            if (document.getElementById('pesq').value == "N° da ocorrência") {
-            document.getElementById('i1').style.display ='block';
-            document.getElementById('i2').style.display ='none';
-            document.getElementById('i3').style.display ='none';
-            document.getElementById('i4').style.display ='none';
-            document.getElementById('i5').style.display ='none';}
+    }
 
-            if (document.getElementById('pesq').value == "Nome") {
-            document.getElementById('i1').style.display ='none';
-            document.getElementById('i2').style.display ='block';
-            document.getElementById('i3').style.display ='none';
-            document.getElementById('i4').style.display ='none';
-            document.getElementById('i5').style.display ='none';}
-
-            if (document.getElementById('pesq').value == "Local") {
-            document.getElementById('i1').style.display ='none';
-            document.getElementById('i2').style.display ='none';
-            document.getElementById('i3').style.display ='block';
-            document.getElementById('i4').style.display ='none';
-            document.getElementById('i5').style.display ='none';}
-
-            if (document.getElementById('pesq').value == "Hospital") {
-            document.getElementById('i1').style.display ='none';
-            document.getElementById('i2').style.display ='none';
-            document.getElementById('i3').style.display ='none';
-            document.getElementById('i4').style.display ='block';
-            document.getElementById('i5').style.display ='none';}
-
-            if (document.getElementById('pesq').value == "Data") {
-            document.getElementById('i1').style.display ='none';
-            document.getElementById('i2').style.display ='none';
-            document.getElementById('i3').style.display ='none';
-            document.getElementById('i4').style.display ='none';
-            document.getElementById('i5').style.display ='block';}
-        }
-        
-    
-  
-
-    </script>
+</script>
 </body>
-
 </html>
