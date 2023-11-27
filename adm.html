@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela ADM</title>
+    <link rel="stylesheet" href="css/adm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="image/logo2.png">
+</head>
+
+<body>
+
+    <!--Registro-->
+
+
+    <div class="registro" id="Registro">
+        <h1><span>Tela do ADM</span></h1>
+
+        <div class="registro_main">
+
+            <form action="adm.php" method="post">
+
+                <div class="input">
+                    <p>RG/CPF Paciente</p>
+                    <input type="varchar" placeholder="Doc Paciente" name="rg">
+                </div>
+
+                <div class="input">
+                    <p>Nome do Paciente</p>
+                    <input type="text" placeholder="Nome do Paciente" name="nome">
+                </div>
+
+                <div class="input">
+                    <p>Telefone Paciente</p>
+                    <input type="phone" placeholder="Telefone do Paciente" name="phone">
+                </div>
+
+                <div class="input">
+                    <p>Idade do Paciente</p>
+                    <input type="varchar" placeholder="Idade do Paciente" name="idade">
+                </div>
+
+                <div class="input">
+                    <p>Nome do Acompanhante</p>
+                    <input type="varchar" placeholder="Nome do Acompanhante" name="nome_acompanhante">
+                </div>
+                
+                <div class="input">
+                    <p>Idade do Acompanhante</p>
+                    <input type="varchar" placeholder="Idade do Acompanhante" name="idade_acompanhante">
+                </div>
+
+                <div class="botao1">
+                    <input type="submit" class="excluir_btn" value="Excluir" name="Excluir">
+                </div>
+
+                <div class="botao2">
+                    <input type="submit" class="atualizar_btn" value="Atualizar" name="Atualizar">
+                </div>
+
+                <div class="botao3">
+                    <input type="submit" class="listar_btn" value="Listar" name="Listar">
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

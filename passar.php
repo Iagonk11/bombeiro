@@ -1,3 +1,23 @@
+<?php
+
+include('conecta.php');
+    if(isset($_POST['login'])){
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+include('conecta.php');
+    $comando = $pdo->prepare("SELECT * from cadastro WHERE emailbombeiro='$email' and senhabombeiro='$senha'" );
+    $resultado = $comando->execute();
+    $n = 0;
+    while ($linhas = $comando->fetch())
+    {
+        $n = $n-1;
+    }
+    if($n == 0){
+        header("Location: login.php?login=0");
+    }
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
