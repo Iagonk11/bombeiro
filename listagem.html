@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Listagem de Ocorrências Médicas</title>
+  <style>
+    /* Estilos simples para a aparência */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Listagem de Ocorrências Médicas</h1>
+
+<!-- Formulário para adicionar ocorrências -->
+<form action="dados1.php" method="post">
+  <label for="paciente">Paciente:</label>
+  <input type="text" id="paciente" name="paciente" required>
+  <label for="descricao">Local Da Ocorrencia:</label>
+  <input type="text" id="descricao" name="descricao" required></textarea>
+  <button type="submit">Adicionar Ocorrência</button>
+</form>
+
+<!-- Tabela para exibir as ocorrências -->
+<table>
+  <tr>
+    <th>NOME </th>
+    <th>DATA</th>
+  </tr>
+  
+
+  
+  
+</table>
+
+</body>
+</html>
